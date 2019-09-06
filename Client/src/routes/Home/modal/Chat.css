@@ -1,0 +1,261 @@
+.listbox {
+  width: 100%;
+  height: 598px;
+}
+
+.friendlist {
+  width: 40%;
+  height: 100%;
+  float: left;
+}
+
+.bblist {
+  width: 60%;
+  height: 100%;
+  float: left;
+  border-left: 2px solid #e6ecf6;
+  background: #f3f5f9
+}
+
+.searchfriend {
+  width: 100%;
+  height: 50px;
+  /* border-bottom: 1px solid #f9fafc; */
+}
+
+.toalllist {
+  width: 100%;
+  height: 550px;
+  border-top: 1px solid #edf0f5;
+  overflow-y: auto;
+}
+
+.everylist {
+  margin-left:1%;
+  width: 98%;
+  height: 70px;
+  margin-bottom: 5px;
+  padding: 5px 0;
+  cursor: pointer;
+  /* position:relative; */
+}
+
+.everylist:hover {
+  background: #f3f5f9
+}
+
+.touxiang {
+  width: 60px;
+  height: 60px;
+  float: left;
+  padding: 3px 0;
+}
+
+.rightlist {
+  width: 60%;
+  height: 100%;
+  float: left;
+  font-size: 20px;
+}
+
+.listalltime {
+  width: 15%;
+  height: 100%;
+  float: left;
+}
+
+.listtime {
+  overflow: hidden;
+  padding-top: 5px;
+  color: #ced1d8
+}
+
+.listname {
+  width: 100%;
+  height: 100%;
+  line-height: 60px;
+  color: #000;
+  font-weight: 900;
+  overflow: hidden;
+  padding: 5px 20px;
+}
+
+.listdes {
+  width: 100%;
+  height: 50%;
+  color: #aab0bc;
+  overflow: hidden;
+  padding: 5px
+}
+
+.touimg {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.startbb {
+  background: #fff;
+  height: 79px;
+  border-bottom: 1px solid #f9fafc;
+  border-right: 2px solid #f3f5f9;
+}
+
+.bbname {
+  width: 60%;
+  height: 100%;
+  font-size: 20px;
+  color: #7e828b;
+  font-weight: 900;
+  padding: 20px 20px;
+  float: left;
+}
+
+.closebb {
+  width: 30px;
+  float: right;
+  color:#000;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.liaotian {
+  width: 100%;
+  height: 335px;
+  overflow-y: auto;
+}
+
+.sendbb {
+  width: 100%;
+  height: 180px;
+  background: #fff;
+  border-right: 2px solid #f3f5f9;
+}
+
+.biaoqing {
+  width: 100%;
+  height: 40px;
+  border-bottom: 2px solid #f3f5f9;
+}
+
+.icons {
+  width: 40px;
+  height: 40px;
+  float: left;
+  text-align: center;
+  padding-top: 5px;
+  margin-left: 20px;
+}
+
+.bigobox {
+  width: 100%;
+  min-height: 60px;
+  margin-top: 20px;
+  /* float:right; */
+}
+
+.talkbox {
+  background: #fff;
+  border-radius: 3px;
+  font-size: 20px;
+  line-height: 30px;
+  padding: 5px 10px;
+  color: #4e5667;
+  margin-left:10px;
+  margin-right:10px;
+  max-width: 88%;
+  white-space: normal;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.imgbox {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  /* float:right; */
+}
+.showtalk{
+  width:100%;
+  overflow: hidden
+}
+
+.timebox {
+  width: 100%;
+  color: #bec2cb;
+  text-align: center;
+}
+
+.toalllist::-webkit-scrollbar {
+  width: 5px;
+}
+
+.toalllist::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+
+.toalllist::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+.toalllist::-webkit-scrollbar-thumb:window-inactive {
+  background: rgba(255, 0, 0, 0.4);
+}
+
+.liaotian::-webkit-scrollbar {
+  width: 5px;
+}
+
+.liaotian::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+
+.liaotian::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+.liaotian::-webkit-scrollbar-thumb:window-inactive {
+  background: rgba(255, 0, 0, 0.4);
+}
+
+.talkshowmodal{
+  height:650px;
+  position: fixed;
+  left:0;
+  top:0;
+  bottom:0;
+  right:0;
+  margin:50px auto;
+  background:#fff;
+  z-index: 1000;
+  border:1px solid #ccc
+}
+.talkheader{
+  width:98%;
+  height:50px;
+  margin-left:1%;
+  border-bottom:1px solid #f3f5f9
+}
+.talktitle{
+  width:100px;
+  float: left;
+  height: 100%;
+  font-size:20px;
+  color:#000;
+  line-height: 50px;
+  text-align: center;
+}
+.talkicon{
+  width:100px;
+  float:right;
+  font-size:20px;
+  color:#000;
+  line-height:50px;
+  text-align: center
+}

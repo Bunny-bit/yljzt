@@ -1,0 +1,53 @@
+.content {
+	width: 300px;
+	height: 334px;
+	position: relative;
+}
+.img {
+	height: 300px;
+}
+.dragImg {
+	height: 40px;
+	width: 40px;
+	position: absolute;
+}
+.bord {
+	position: relative;
+	background-color: #e8e8e8;
+	height: 34px;
+	line-height: 34px;
+	text-align: center;
+}
+.dragBack{	
+	position: absolute;
+    background-color: #7ac23c;
+    height: 34px;
+    width: 0px;
+}
+.dragText {
+	font-size: 15px;
+	color: #4a4a4a;
+	position: absolute;
+	top: 0px;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	user-select: none;
+	-o-user-select: none;
+	-ms-user-select: none;
+	width: 100%;
+}
+.handler {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 40px;
+	height: 34px;
+	border: 1px solid #ccc;
+	cursor: move;
+	background: #fff;
+}
+.refesh {
+	position: absolute;
+	font-size: 20px;
+	right: 5px;
+}

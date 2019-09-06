@@ -1,0 +1,50 @@
+﻿<#@ template debug="false"  hostspecific="true" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ assembly name="System.Web" #>
+<#@ assembly name="$(SolutionDir)\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Web.Mvc" #>
+<#@ import namespace="System.Web" #>
+<#@ output extension=".md" #>
+[TOCM]
+<#
+	var path = Path.Combine(Host.ResolveAssemblyReference("$(ProjectDir)"), "App_Data\\Documents"); 
+	var documents = new Stack<MarkdownInfo>();
+	documents.Push(new MarkdownInfo{Path=path,Name="MFUI 中文文档",ReferencePath="\\", Indent="#"});
+	var urlPrefix = "/document/?path=";
+	do{
+		var document = documents.Pop();		
+		WriteLine($"{document.Indent} {document.Name}");
+		var files = Directory.GetFiles(document.Path);
+		foreach(var file in files){
+			var filename = Path.GetFileName(file);
+			var extension = Path.GetExtension(file);
+			if(extension.ToLower() != ".md"){
+				continue;
+			}
+			var urlParameter = HttpUtility.UrlEncode($"{document.ReferencePath}{filename}");
+			WriteLine($"{document.Indent}## [{filename.Replace(extension,"")}]({urlPrefix}{urlParameter})");
+		}
+		var folders = Directory.GetDirectories(document.Path).Reverse();
+		foreach(var folder in folders){
+			var foldername = Path.GetFileName(folder);
+			documents.Push(new MarkdownInfo{Path=$"{path}\\{foldername}",Name=foldername,ReferencePath=$"{document.ReferencePath}{foldername}\\", Indent=document.Indent+"#"});
+		}
+    } while (documents.Count > 0);
+            
+	#>
+
+---
+ *Author: nessert*
+
+<#+ 
+	public class MarkdownInfo{
+		public string Path{get;set;}
+		public string Name{get;set;}
+		public string ReferencePath{get;set;}
+		public string Indent{get;set;}
+	} 
+#>

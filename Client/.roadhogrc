@@ -1,0 +1,40 @@
+{
+  "entry": "src/index.js",
+  "env": {
+    "development": {
+      "extraBabelPlugins": [
+        "dva-hmr",
+        "transform-runtime",
+        ["import", { "libraryName": "antd", "style": true }]
+      ]
+    },
+    "production": {
+      "extraBabelPlugins": [
+        "transform-runtime",
+        ["import", { "libraryName": "antd", "style": true }]
+      ]
+    }
+  },
+  "proxy": {
+    "/api": {
+      "target": "http://xxx.xxx.xxx.xxx:666/",
+      "changeOrigin": true,
+      "pathRewrite": { "^/api" : "" }
+    },
+    "/signalr": {
+      "target": "http://xxx.xxx.xxx.xxx:666/",
+      "changeOrigin": true,
+      "pathRewrite": { "^/signalr" : "/signalr" }
+    },
+    "/UE": {
+      "target": "http://xxx.xxx.xxx.xxx:666/",
+      "changeOrigin": true,
+      "pathRewrite": { "^/UE" : "/UE" }
+    },
+    "/Common": {
+      "target": "http://xxx.xxx.xxx.xxx:666/",
+      "changeOrigin": true,
+      "pathRewrite": { "^/Common" : "/Common" }
+    }
+  }
+}

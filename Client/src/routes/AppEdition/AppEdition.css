@@ -1,0 +1,20 @@
+.row1 {
+    padding-bottom: 16px;
+  }
+  
+  .adds {
+    margin-bottom: 16px;
+    margin-right: 16px;
+  }
+  
+  .tabbox {
+    border-top: 1px solid #e0e0e0;
+    padding-top: 16px;
+  }
+  
+  .tableText {
+      width: 300px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+  }

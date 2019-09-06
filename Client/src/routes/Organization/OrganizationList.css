@@ -1,0 +1,94 @@
+.normalC {
+  background: #fff;
+  padding: 12px;
+  margin-right: 40px;
+
+}
+
+.normalD {
+  padding: 12px;
+  background: #fff;
+}
+
+.row1 {
+  padding-bottom: 16px;
+}
+
+.form2 {
+  background: #F3F5F9;
+  border: 1px solid #E6EAF1;
+  border-radius: 4px;
+  padding-bottom: 16px;
+}
+
+.form2 button, .btns button {
+  margin-right: 16px;
+}
+
+.btns {
+  margin-bottom: 16px;
+}
+
+.row2 {
+  padding-top: 24px;
+}
+
+.div2 {
+  padding-bottom: 24px;
+}
+
+.collapseP {
+  position: absolute;
+  right: 25px;
+  bottom: 10px;
+}
+
+.tR {
+  text-align: right;
+}
+
+.collapse {
+  font-family: PingFangSC-Regular;
+  font-size: 12px;
+  color: #537FDF;
+  letter-spacing: 0;
+  line-height: 12px;
+}
+
+.collapsePR {
+  padding-right: 24px;
+}
+
+.mm {
+  display: flex;
+  align-items: center;
+}
+
+:global(.ant-form-item) {
+  margin-bottom: 16px;
+}
+
+.norbot {
+  width: 60px;
+}
+
+.norhead {
+  font-size: 18px;
+  color: #4c5976;
+  font-weight: 900;
+}
+
+.noradd {
+  text-align: right
+}
+
+.titlehead {
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #e6eaf1;
+}
+
+.search {
+  width: 250px;
+  margin-bottom: 15px;
+}

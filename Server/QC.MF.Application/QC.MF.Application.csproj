@@ -1,0 +1,490 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EDF5D964-4C0F-4F19-B674-58A38A5E5401}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>QC.MF</RootNamespace>
+    <AssemblyName>QC.MF.Application</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\QC.MF.Application.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Abp, Version=3.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.3.5.0\lib\netstandard2.0\Abp.dll</HintPath>
+    </Reference>
+    <Reference Include="Abp.AutoMapper, Version=3.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.AutoMapper.3.5.0\lib\netstandard2.0\Abp.AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Abp.EntityFramework, Version=3.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.EntityFramework.3.5.0\lib\net461\Abp.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Abp.EntityFramework.Common, Version=3.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.EntityFramework.Common.3.5.0\lib\netstandard2.0\Abp.EntityFramework.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Abp.Web.Api">
+      <HintPath>..\packages\Abp.Web.Api.2.3.0\lib\net46\Abp.Web.Api.dll</HintPath>
+    </Reference>
+    <Reference Include="Abp.Zero, Version=3.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.Zero.3.5.0\lib\net461\Abp.Zero.dll</HintPath>
+    </Reference>
+    <Reference Include="Abp.Zero.Common, Version=3.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.Zero.Common.3.5.0\lib\netstandard2.0\Abp.Zero.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Abp.Zero.EntityFramework, Version=3.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.Zero.EntityFramework.3.5.0\lib\net461\Abp.Zero.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="AopSdk, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AopSdk.0.0.1\lib\AopSdk.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper, Version=6.2.2.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.6.2.2\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.1.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\AopSdk.0.0.1\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Core.4.2.1\lib\net45\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Facilities.Logging, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.LoggingFacility.4.1.0\lib\net45\Castle.Facilities.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Windsor.4.1.0\lib\net45\Castle.Windsor.dll</HintPath>
+    </Reference>
+    <Reference Include="DataExporting, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DataExporting.2.0.0\lib\net461\DataExporting.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.DynamicFilters, Version=3.0.1.0, Culture=neutral, PublicKeyToken=59b66d028979105b, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.DynamicFilters.3.0.1\lib\net40\EntityFramework.DynamicFilters.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus, Version=4.1.1.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.4.1.1\lib\net40\EPPlus.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="JetBrains.Annotations, Version=11.1.0.0, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
+      <HintPath>..\packages\JetBrains.Annotations.11.1.0\lib\net20\JetBrains.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Caching.Abstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Caching.Abstractions.2.0.0\lib\netstandard2.0\Microsoft.Extensions.Caching.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Caching.Memory, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Caching.Memory.2.0.0\lib\netstandard2.0\Microsoft.Extensions.Caching.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.2.0.0\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Options, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Options.2.0.0\lib\netstandard2.0\Microsoft.Extensions.Options.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Primitives.2.0.0\lib\netstandard2.0\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions.Desktop, Version=1.0.168.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.Desktop.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Nito.AsyncEx, Version=4.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nito.AsyncEx.4.0.1\lib\net45\Nito.AsyncEx.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Nito.AsyncEx.Concurrent, Version=4.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nito.AsyncEx.4.0.1\lib\net45\Nito.AsyncEx.Concurrent.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Nito.AsyncEx.Context, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nito.AsyncEx.Context.1.1.0\lib\net46\Nito.AsyncEx.Context.dll</HintPath>
+    </Reference>
+    <Reference Include="Nito.AsyncEx.Coordination, Version=1.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nito.AsyncEx.Coordination.1.0.2\lib\net46\Nito.AsyncEx.Coordination.dll</HintPath>
+    </Reference>
+    <Reference Include="Nito.AsyncEx.Enlightenment, Version=4.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nito.AsyncEx.4.0.1\lib\net45\Nito.AsyncEx.Enlightenment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Nito.AsyncEx.Tasks, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nito.AsyncEx.Tasks.1.1.0\lib\net46\Nito.AsyncEx.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="Nito.Collections.Deque, Version=1.0.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nito.Collections.Deque.1.0.4\lib\netstandard2.0\Nito.Collections.Deque.dll</HintPath>
+    </Reference>
+    <Reference Include="Nito.Disposables, Version=1.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nito.Disposables.1.2.3\lib\netstandard2.0\Nito.Disposables.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Collections.Immutable, Version=1.2.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.1.4.0\lib\netstandard2.0\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.4.4.1\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.ConfigurationManager, Version=4.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Configuration.ConfigurationManager.4.4.1\lib\net461\System.Configuration.ConfigurationManager.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Linq.Dynamic, Version=1.0.6132.35681, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Linq.Dynamic.1.0.7\lib\net40\System.Linq.Dynamic.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Linq.Dynamic.Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=0f07ec44de6ac832, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Linq.Dynamic.Core.1.0.8.2\lib\net46\System.Linq.Dynamic.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.4.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.XPath.XmlDocument, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Xml.XPath.XmlDocument.4.3.0\lib\net46\System.Xml.XPath.XmlDocument.dll</HintPath>
+    </Reference>
+    <Reference Include="TimeZoneConverter, Version=2.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\TimeZoneConverter.2.3.0\lib\net45\TimeZoneConverter.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppConsts.cs" />
+    <Compile Include="AppEditions\AppEditionsAppService.cs" />
+    <Compile Include="AppEditions\AppType.cs" />
+    <Compile Include="AppEditions\Dto\AboutOutput.cs" />
+    <Compile Include="AppEditions\Dto\AppEditionDto.cs" />
+    <Compile Include="AppEditions\Dto\CheckUpdateOutput.cs" />
+    <Compile Include="AppEditions\Dto\CreateAndroidAppEditionInput.cs" />
+    <Compile Include="AppEditions\Dto\CreateAppEditionInput.cs" />
+    <Compile Include="AppEditions\Dto\CreateIOSAppEditionInput.cs" />
+    <Compile Include="AppEditions\Dto\GetAboutAndCheckUpdateOutput.cs" />
+    <Compile Include="AppEditions\Dto\GetAppEditionsInput.cs" />
+    <Compile Include="AppEditions\Dto\UpdateAndroidAppEditionInput.cs" />
+    <Compile Include="AppEditions\Dto\UpdateIOSAppEditionInput.cs" />
+    <Compile Include="AppEditions\Dto\VersionInput.cs" />
+    <Compile Include="AppEditions\IAppEditionsAppService.cs" />
+    <Compile Include="AppStartPages\Dto\IsUpatedInput.cs" />
+    <Compile Include="AppStartPages\Dto\GetAppStartPageInput.cs" />
+    <Compile Include="Auditing\AuditLogAndUser.cs" />
+    <Compile Include="Auditing\AuditLogAppService.cs" />
+    <Compile Include="Auditing\Dto\AuditLogListDto.cs" />
+    <Compile Include="Auditing\Dto\GetAuditLogsInput.cs" />
+    <Compile Include="Auditing\IAuditLogAppService.cs" />
+    <Compile Include="Auditing\INamespaceStripper.cs" />
+    <Compile Include="Auditing\NamespaceStripper.cs" />
+    <Compile Include="Authorization\Accounts\Dto\TenantAvailabilityState.cs" />
+    <Compile Include="Authorization\Actives\ActiveAppService.cs" />
+    <Compile Include="Authorization\Actives\Dto\ConfirmEmailInput.cs" />
+    <Compile Include="Authorization\Actives\IActiveAppService.cs" />
+    <Compile Include="Authorization\Registers\Dto\RegisterOnlyPhoneNumberInput.cs" />
+    <Compile Include="Authorization\RestPasswords\RestPasswordAppService.cs" />
+    <Compile Include="Authorization\RestPasswords\Dto\ResetPasswordByEmailInput.cs" />
+    <Compile Include="Authorization\RestPasswords\Dto\ResetPasswordByPhoneNumberInput.cs" />
+    <Compile Include="Authorization\RestPasswords\IRestPasswordAppService.cs" />
+    <Compile Include="Authorization\Accounts\Dto\BindingThirdPartyInput.cs" />
+    <Compile Include="Authorization\CommonDto\ConfirmEmailCodeInput.cs" />
+    <Compile Include="Authorization\CommonDto\SendConfirmEmailByCaptchaInput.cs" />
+    <Compile Include="Authorization\CommonDto\SendConfirmEmailInput.cs" />
+    <Compile Include="Authorization\Permissions\Dto\FlatPermissionDto.cs" />
+    <Compile Include="Authorization\Permissions\Dto\FlatPermissionWithLevelDto.cs" />
+    <Compile Include="Authorization\Permissions\Dto\PermissionDto.cs" />
+    <Compile Include="Authorization\Permissions\IPermissionAppService.cs" />
+    <Compile Include="Authorization\Permissions\PermissionAppService.cs" />
+    <Compile Include="Authorization\Permissions\PermissionManagerExtensions.cs" />
+    <Compile Include="Authorization\Registers\RegisterAppService.cs" />
+    <Compile Include="Authorization\Registers\Dto\RegisterByEmailInput.cs" />
+    <Compile Include="Authorization\Registers\Dto\RegisterByPhoneNumberInput.cs" />
+    <Compile Include="Authorization\Registers\Dto\RegisterInput.cs" />
+    <Compile Include="Authorization\Registers\Dto\RegisterOutput.cs" />
+    <Compile Include="Authorization\Registers\Dto\ResetPasswordByEmailInput.cs" />
+    <Compile Include="Authorization\Registers\Dto\ResetPasswordByPhoneNumberInput.cs" />
+    <Compile Include="Authorization\Registers\IRegisterAppService.cs" />
+    <Compile Include="Authorization\ThirdParty\AlipayAuthService.cs" />
+    <Compile Include="Authorization\ThirdParty\Dto\AuthorizationInput.cs" />
+    <Compile Include="Authorization\ThirdParty\Dto\ThirdPartyAuthorizeResult.cs" />
+    <Compile Include="Authorization\ThirdParty\Dto\ThirdPartyUserOutput.cs" />
+    <Compile Include="Authorization\ThirdParty\IThirdPartyAppService.cs" />
+    <Compile Include="Authorization\ThirdParty\IThirdPartyAuthService.cs" />
+    <Compile Include="Authorization\ThirdParty\QQAuthService.cs" />
+    <Compile Include="Authorization\ThirdParty\WeiboAuthService.cs" />
+    <Compile Include="Authorization\ThirdParty\WeixinAuthService.cs" />
+    <Compile Include="Chat\ChatAppService.cs" />
+    <Compile Include="Chat\Dto\ChatMessageDto.cs" />
+    <Compile Include="Chat\Dto\ChatUserDto.cs" />
+    <Compile Include="Chat\Dto\ChatUserWithMessagesDto.cs" />
+    <Compile Include="Chat\Dto\GetUserChatFriendsWithSettingsOutput.cs" />
+    <Compile Include="Chat\Dto\GetUserChatMessagesInput.cs" />
+    <Compile Include="Chat\Dto\MarkAllUnreadMessagesOfUserAsReadInput.cs" />
+    <Compile Include="Chat\IChatAppService.cs" />
+    <Compile Include="CommonDto\CascaderDto.cs" />
+    <Compile Include="CommonDto\FilteredInputDto.cs" />
+    <Compile Include="CommonDto\Grouping.cs" />
+    <Compile Include="CommonDto\IFilteredResultRequest.cs" />
+    <Compile Include="CommonDto\ImportOutput.cs" />
+    <Compile Include="CommonDto\EnumToNameValue.cs" />
+    <Compile Include="CommonDto\PagedSortedDefaultWithOrderAndFilteredInputDto.cs" />
+    <Compile Include="CommonDto\PreviousAndNextDto.cs" />
+    <Compile Include="Configuration\Dto\ClientSettingDto.cs" />
+    <Compile Include="Configuration\Dto\ISettingDto.cs" />
+    <Compile Include="Configuration\Dto\PushSettingDto.cs" />
+    <Compile Include="Configuration\Dto\SecuritySettingDto.cs" />
+    <Compile Include="Configuration\Dto\SettingsEditOutput.cs" />
+    <Compile Include="Configuration\Dto\SiteUrlInput.cs" />
+    <Compile Include="Configuration\Dto\SkinInput.cs" />
+    <Compile Include="Configuration\Dto\SkinOutput.cs" />
+    <Compile Include="Configuration\Dto\OAuthSettingDto.cs" />
+    <Compile Include="Configuration\Dto\SystemSettingDto.cs" />
+    <Compile Include="Configuration\SecurityConfigurationService.cs" />
+    <Compile Include="Configuration\ConfigurationService.cs" />
+    <Compile Include="Configuration\Dto\SettingProperty.cs" />
+    <Compile Include="Configuration\Dto\UserManagementSettingDto.cs" />
+    <Compile Include="Configuration\IConfigurationService.cs" />
+    <Compile Include="Configuration\TabAttribute.cs" />
+    <Compile Include="Configuration\TitleAttribute.cs" />
+    <Compile Include="Configuration\KeyAttribute.cs" />
+    <Compile Include="CustomDtoMapper.cs" />
+    <Compile Include="AppStartPages\AppStartPageAppService.cs" />
+    <Compile Include="AppStartPages\Dto\CreateAppStartPageDto.cs" />
+    <Compile Include="AppStartPages\Dto\GetAppStartPageDto.cs" />
+    <Compile Include="AppStartPages\Dto\GetListAppStartPageDto.cs" />
+    <Compile Include="AppStartPages\Dto\UpdateAppStartPageDto.cs" />
+    <Compile Include="AppStartPages\IAppStartPageAppService.cs" />
+    <Compile Include="DragVerifications\DragVerificationAppService.cs" />
+    <Compile Include="DragVerifications\Dto\CheckCodeInput.cs" />
+    <Compile Include="DragVerifications\Dto\CheckCodeOutput.cs" />
+    <Compile Include="DragVerifications\Dto\DragVerificationDto.cs" />
+    <Compile Include="DragVerifications\IDragVerificationAppService.cs" />
+    <Compile Include="CommonDto\ArrayDto.cs" />
+    <Compile Include="CommonDto\PagedAndFilteredInputDto.cs" />
+    <Compile Include="CommonDto\PagedAndSortedInputDto.cs" />
+    <Compile Include="CommonDto\PagedInputDto.cs" />
+    <Compile Include="CommonDto\PagedSortedAndFilteredInputDto.cs" />
+    <Compile Include="DynamicQueryableExtensions.cs" />
+    <Compile Include="Friendships\Dto\AcceptFriendshipRequestInput.cs" />
+    <Compile Include="Friendships\Dto\BlockUserInput.cs" />
+    <Compile Include="Friendships\Dto\CreateFriendshipRequestByUserNameInput.cs" />
+    <Compile Include="Friendships\Dto\CreateFriendshipRequestInput.cs" />
+    <Compile Include="Friendships\Dto\FirendshipUserDto.cs" />
+    <Compile Include="Friendships\Dto\FriendshipDto.cs" />
+    <Compile Include="Friendships\Dto\UnblockUserInput.cs" />
+    <Compile Include="Friendships\FriendshipAppService.cs" />
+    <Compile Include="Friendships\IFriendshipAppService.cs" />
+    <Compile Include="Geetests\Dto\GeetestAPPCheckInput.cs" />
+    <Compile Include="Geetests\Dto\GeetestCheckOutput.cs" />
+    <Compile Include="Geetests\Dto\GeetestCheckInput.cs" />
+    <Compile Include="Geetests\GeetestAppService.cs" />
+    <Compile Include="Geetests\IGeetestAppService.cs" />
+    <Compile Include="FileSettingDemos\Dto\GetFileSettingDemoDto.cs" />
+    <Compile Include="FileSettingDemos\Dto\SetFileSettingDemoDto.cs" />
+    <Compile Include="FileSettingDemos\FileSettingDemoAppService.cs" />
+    <Compile Include="FileSettingDemos\IFileSettingDemoAppService.cs" />
+    <Compile Include="InterfaceExport\IInterfaceExportAppService.cs" />
+    <Compile Include="InterfaceExport\InterfaceExportAppService.cs" />
+    <Compile Include="IO\AppFileHelper.cs" />
+    <Compile Include="Menus\CodeNavigationProvider.cs" />
+    <Compile Include="Menus\Dto\CreateMenuInput.cs" />
+    <Compile Include="Menus\Dto\DeleteMenuInput.cs" />
+    <Compile Include="Menus\Dto\MenuDto.cs" />
+    <Compile Include="Menus\Dto\MoveMenuInput.cs" />
+    <Compile Include="Menus\Dto\UpdateMenuInput.cs" />
+    <Compile Include="Menus\IMenuAppService.cs" />
+    <Compile Include="Menus\MenuAppService.cs" />
+    <Compile Include="Menus\DBNavigationProvider.cs" />
+    <Compile Include="MFApplicationModule.cs" />
+    <Compile Include="MFAppServiceBase.cs" />
+    <Compile Include="Authorization\Accounts\AccountAppService.cs" />
+    <Compile Include="Authorization\Accounts\Dto\IsTenantAvailable.cs" />
+    <Compile Include="Authorization\Accounts\Dto\IsTenantAvailableOutput.cs" />
+    <Compile Include="Authorization\Accounts\IAccountAppService.cs" />
+    <Compile Include="Configuration\ConfigurationAppService.cs" />
+    <Compile Include="Configuration\Dto\ChangeUiThemeInput.cs" />
+    <Compile Include="Configuration\IConfigurationAppService.cs" />
+    <Compile Include="Net\MimeTypes\MimeTypeNames.cs" />
+    <Compile Include="Notifications\Dto\GetNotificationSettingsOutput.cs" />
+    <Compile Include="Notifications\Dto\GetNotificationsOutput.cs" />
+    <Compile Include="Notifications\Dto\GetUserNotificationsInput.cs" />
+    <Compile Include="Notifications\Dto\NotificationSubscriptionDto.cs" />
+    <Compile Include="Notifications\Dto\NotificationSubscriptionWithDisplayNameDto.cs" />
+    <Compile Include="Notifications\Dto\UpdateNotificationSettingsInput.cs" />
+    <Compile Include="Notifications\INotificationAppService.cs" />
+    <Compile Include="Notifications\NotificationAppService.cs" />
+    <Compile Include="OrganizationUnits\Dto\GetOrganizationUnitJoinableUserListInput.cs" />
+    <Compile Include="OrganizationUnits\Dto\GetOrganizationUnitUsersInput.cs" />
+    <Compile Include="OrganizationUnits\Dto\OrganizationUnitUserListDto.cs" />
+    <Compile Include="OrganizationUnits\Dto\UpdateOrganizationUnitInput.cs" />
+    <Compile Include="OrganizationUnits\Dto\CreateOrganizationUnitInput.cs" />
+    <Compile Include="OrganizationUnits\Dto\MoveOrganizationUnitInput.cs" />
+    <Compile Include="OrganizationUnits\Dto\OrganizationUnitDto.cs" />
+    <Compile Include="OrganizationUnits\Dto\OrganizationUnitUserDto.cs" />
+    <Compile Include="OrganizationUnits\Dto\UserIdInput.cs" />
+    <Compile Include="OrganizationUnits\Dto\UsersToOrganizationUnitInput.cs" />
+    <Compile Include="OrganizationUnits\Dto\UserToOrganizationUnitInput.cs" />
+    <Compile Include="OrganizationUnits\IOrganizationUnitAppService.cs" />
+    <Compile Include="OrganizationUnits\OrganizationUnitAppService.cs" />
+    <Compile Include="Demos\Dto\CreateDemoDto.cs" />
+    <Compile Include="Demos\Dto\GetListDemoDto.cs" />
+    <Compile Include="Demos\Dto\GetDemoDto.cs" />
+    <Compile Include="Demos\Dto\UpdateDemoDto.cs" />
+    <Compile Include="Demos\IDemoAppService.cs" />
+    <Compile Include="Demos\DemoAppService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="AsyncMFCrudAppService.cs" />
+    <Compile Include="Roles\Dto\CreateOrUpdateRoleInput.cs" />
+    <Compile Include="Roles\Dto\CreateRoleDto.cs" />
+    <Compile Include="Roles\Dto\GetRoleForEditOutput.cs" />
+    <Compile Include="Roles\Dto\GetRolesInput.cs" />
+    <Compile Include="Roles\Dto\PermissionDto.cs" />
+    <Compile Include="Roles\Dto\RoleDto.cs" />
+    <Compile Include="Roles\Dto\RoleEditDto.cs" />
+    <Compile Include="Roles\Dto\RoleListDto.cs" />
+    <Compile Include="Roles\IRoleAppService.cs" />
+    <Compile Include="Users\Dto\CreateOrUpdateUserInput.cs" />
+    <Compile Include="Users\Dto\CreateUserDto.cs" />
+    <Compile Include="Users\Dto\GetUserLoginsInput.cs" />
+    <Compile Include="Users\Dto\GetLinkedUsersInput.cs" />
+    <Compile Include="Users\Dto\GetUserForEditOutput.cs" />
+    <Compile Include="Users\Dto\GetUserPermissionsForEditOutput.cs" />
+    <Compile Include="Users\Dto\GetUsersInput.cs" />
+    <Compile Include="Users\Dto\LinkToUserInput.cs" />
+    <Compile Include="Users\Dto\PhoneWithCaptchaInput.cs" />
+    <Compile Include="Users\Dto\PhoneInput.cs" />
+    <Compile Include="Users\Dto\UnlinkUserInput.cs" />
+    <Compile Include="Users\Dto\UpdateUserDto.cs" />
+    <Compile Include="Users\Dto\UpdateUserPermissionsInput.cs" />
+    <Compile Include="Users\Dto\UserDto.cs" />
+    <Compile Include="Users\Dto\BatchActiveUserInput.cs" />
+    <Compile Include="Users\Dto\UserEditDto.cs" />
+    <Compile Include="Users\Dto\UserListDto.cs" />
+    <Compile Include="Users\Dto\UserLoginAttemptDto.cs" />
+    <Compile Include="Users\Dto\UserRoleDto.cs" />
+    <Compile Include="Users\Dto\VerificationCodeInput.cs" />
+    <Compile Include="Users\IUserAppService.cs" />
+    <Compile Include="Roles\RoleAppService.cs" />
+    <Compile Include="Sessions\Dto\GetCurrentLoginInformationsOutput.cs" />
+    <Compile Include="Sessions\Dto\TenantLoginInfoDto.cs" />
+    <Compile Include="Sessions\Dto\UserLoginInfoDto.cs" />
+    <Compile Include="Sessions\ISessionAppService.cs" />
+    <Compile Include="Sessions\SessionAppService.cs" />
+    <Compile Include="Users\IUserLoginAppService.cs" />
+    <Compile Include="Users\Profile\Dto\ChangeUserPasswordInput.cs" />
+    <Compile Include="Users\Profile\Dto\ChangePasswordInput.cs" />
+    <Compile Include="Users\Profile\Dto\CurrentUserProfileEditDto.cs" />
+    <Compile Include="Users\Profile\Dto\GetPasswordComplexitySettingOutput.cs" />
+    <Compile Include="Users\Profile\Dto\UpdateProfilePictureInput.cs" />
+    <Compile Include="Users\Profile\IProfileAppService.cs" />
+    <Compile Include="Users\Profile\ProfileAppService.cs" />
+    <Compile Include="Users\UserAppService.cs" />
+    <Compile Include="Users\UserLoginAppService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\QC.MF.Core\QC.MF.Core.csproj">
+      <Project>{17298ea0-af73-4f30-b6f1-2066100d7d74}</Project>
+      <Name>QC.MF.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\QC.MF.EntityFramework\QC.MF.EntityFramework.csproj">
+      <Project>{3979f157-deb0-4878-ab1d-4cef6b5a1300}</Project>
+      <Name>QC.MF.EntityFramework</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets'))" />
+  </Target>
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

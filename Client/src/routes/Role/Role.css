@@ -1,0 +1,43 @@
+.row1 {
+  padding-bottom: 16px;
+}
+
+.adds {
+  /*width: 150px;*/
+  /*height: 40px;*/
+  /*border-radius: 4px;*/
+  margin-bottom: 16px;
+}
+
+.tabbox {
+  border-top: 1px solid #e0e0e0;
+  padding-top: 16px;
+}
+
+.search {
+  width: 300px;
+  height: 40px;
+}
+
+.showbox {
+  margin-top: 30px;
+  margin-left: 160px;
+}
+
+.showname {
+  font-size: 18px;
+  float: left;
+}
+
+.showinp {
+  width: 400px;
+  height: 30px;
+  float: left;
+  margin-left: 10px;
+}
+
+.checkbox {
+  width: 200px;
+  height: 50px;
+  margin-left: 170px;
+}

@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "allowSyntheticDefaultImports": true,
+    //设置 allowSyntheticDefaultImports 避免 error TS1192: Module 'react' has no default export 的错误。
+    "moduleResolution": "node",
+    "jsx": "react-native",
+    "module": "es6",
+    //"sourceMap": true,
+    //生成相应的.map文件。
+    // "declaration": true,
+    "allowJs": true,
+    "checkJs": true,
+    //"alwaysStrict": true,
+    // "diagnostics": true, //显示诊断信息。
+    // "listEmittedFiles": true,
+    // "listFiles": true,
+    "locale": "zh-cn",
+    // "noEmitOnError": true, //报错时不生成输出文件。
+    "pretty": true,
+    "noFallthroughCasesInSwitch": true,
+    "typeRoots": [
+      "./src/api",
+      "node_modules/@types"
+    ],
+    "isolatedModules": true,
+    "noImplicitAny": true
+  },
+  "exclude": [
+    "node_modules",
+    "src/components/Ueditor",
+    "public",
+    "dist",
+    "mock"
+  ]
+}

@@ -1,0 +1,62 @@
+.navbox {
+  width: 100%;
+  min-height: 100%;
+  background: #4f5b75;
+  overflow: hidden
+}
+
+.logologin {
+  width: 450px;
+  margin: 20px auto;
+}
+
+.logologin img {
+  width: 450px;
+}
+
+.indexbox {
+  width: 450px;
+  border-radius: 5px;
+  margin: 0px auto;
+  background: #fff;
+  padding: 24px 24px 0px;
+}
+
+.headerbox {
+  width: 100%;
+  height: 50px;
+  border-bottom: 1px solid #E6EAF1;
+}
+
+.headcol {
+  font-size: 18px;
+  color: #4E5667;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.headback {
+  font-size: 18px;
+  color: #537fdf;
+  float: right
+}
+
+.formbox {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #E6EAF1;
+}
+
+.login {
+  width: 100%;
+  margin: 20px 0 20px 0;
+  height: 40px;
+  font-size: 18px
+}
+
+.colorsize {
+  color: #4e5667;
+  font-size: 18px;
+}
+
+

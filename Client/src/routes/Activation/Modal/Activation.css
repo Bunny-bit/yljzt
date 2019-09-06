@@ -1,0 +1,90 @@
+.normal {
+
+}
+
+.navbox {
+  width: 100%;
+  min-height: 100%;
+  background: #4f5b75;
+  overflow: hidden
+}
+
+.logologin {
+  width: 450px;
+  margin: 20px auto;
+}
+
+.logologin img {
+  width: 450px;
+}
+
+.headerbox {
+  border-bottom: 1px solid #E6EAF1;
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.headcol {
+  font-size: 18px;
+  color: #4E5667;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.headback {
+  font-size: 14px;
+  color: #537fdf;
+}
+
+.formbox {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #E6EAF1;
+}
+
+.login1 {
+  width: 100%;
+  margin: 16px 0 24px;
+  background-color: #58B96C;
+  border-color: #58B96C;
+}
+
+.login {
+  width: 100%;
+  margin: 16px 0 24px;
+}
+
+.login1[disabled] {
+  color: #fff;
+  background-color: #58B96C;
+  border-color: #58B96C;
+}
+
+.colorSize {
+  color: #4e5667;
+  font-size: 14px;
+}
+
+.imgCol {
+  height: 32px;
+}
+
+.imgSMS {
+  display: block;
+  border-radius: 4px;
+  height: 32px;
+  overflow: hidden;
+}
+
+.imgSMS > img {
+  width: 100%;
+  height: 32px;
+}
+
+.smsBtn {
+  width: 100%;
+}
