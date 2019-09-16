@@ -3,3 +3,4 @@ packages
 .vs
 Debug
 bin
+/Client/src/*.js

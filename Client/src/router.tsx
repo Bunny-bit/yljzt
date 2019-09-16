@@ -38,6 +38,8 @@ import GetsetDemo from './routes/GetsetDemo/GetsetDemo';
 import UserCRUDDemo from './routes/UserCRUDDemo/User';
 import AppEdition from './routes/AppEdition/AppEdition';
 import AppStartPage from './routes/AppStartPage/AppStartPage';
+import Renyua from './routes/Renyua/Renyua';
+import Renyuas from './routes/Renyua/Renyuas';
 /**
  * router.js
  * Created by 李廷旭 on 2017/9/5 12:39
@@ -45,7 +47,7 @@ import AppStartPage from './routes/AppStartPage/AppStartPage';
  */
 export default function RouterConfig({ history }) {
 	return (
-		<LocaleProvider locale={zhCN}>
+		<LocaleProvider locale={zhCN}>	
 			<Router history={history}>
 				<Route path="/" component={IndexPage} />
 				<Route path="/register" component={Register} />
@@ -86,7 +88,9 @@ export default function RouterConfig({ history }) {
 					<Route path="/userCRUDDemo" component={UserCRUDDemo} />
 					<Route path="/appEdition" component={AppEdition} />
 					<Route path="/appStartPage" component={AppStartPage} />
+					<Route path="/renyua" component={Renyua} />
 				</Route>
+				<Route path="/renyuas" component={Renyuas} />
 			</Router>
 		</LocaleProvider>
 	);

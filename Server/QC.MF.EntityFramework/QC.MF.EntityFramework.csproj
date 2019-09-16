@@ -239,6 +239,18 @@
     <Compile Include="Migrations\201803200329425_init9.Designer.cs">
       <DependentUpon>201803200329425_init9.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201909100808416_yanwei20199101608.cs" />
+    <Compile Include="Migrations\201909100808416_yanwei20199101608.Designer.cs">
+      <DependentUpon>201909100808416_yanwei20199101608.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909120830251_yanwei20199121630.cs" />
+    <Compile Include="Migrations\201909120830251_yanwei20199121630.Designer.cs">
+      <DependentUpon>201909120830251_yanwei20199121630.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909160149293_yanwei2019916949.cs" />
+    <Compile Include="Migrations\201909160149293_yanwei2019916949.Designer.cs">
+      <DependentUpon>201909160149293_yanwei2019916949.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\AbpZeroDbMigrator.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MFDataModule.cs" />
@@ -308,6 +320,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201803200329425_init9.resx">
       <DependentUpon>201803200329425_init9.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909100808416_yanwei20199101608.resx">
+      <DependentUpon>201909100808416_yanwei20199101608.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909120830251_yanwei20199121630.resx">
+      <DependentUpon>201909120830251_yanwei20199121630.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909160149293_yanwei2019916949.resx">
+      <DependentUpon>201909160149293_yanwei2019916949.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
