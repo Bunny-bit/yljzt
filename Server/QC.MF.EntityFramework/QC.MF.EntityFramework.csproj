@@ -239,25 +239,9 @@
     <Compile Include="Migrations\201803200329425_init9.Designer.cs">
       <DependentUpon>201803200329425_init9.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201909100819431_lichunlin201909101618.cs" />
-    <Compile Include="Migrations\201909100819431_lichunlin201909101618.Designer.cs">
-      <DependentUpon>201909100819431_lichunlin201909101618.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201909110400036_lichunlin201910.cs" />
-    <Compile Include="Migrations\201909110400036_lichunlin201910.Designer.cs">
-      <DependentUpon>201909110400036_lichunlin201910.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201909100808416_yanwei20199101608.cs" />
-    <Compile Include="Migrations\201909100808416_yanwei20199101608.Designer.cs">
-      <DependentUpon>201909100808416_yanwei20199101608.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201909120830251_yanwei20199121630.cs" />
-    <Compile Include="Migrations\201909120830251_yanwei20199121630.Designer.cs">
-      <DependentUpon>201909120830251_yanwei20199121630.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201909160149293_yanwei2019916949.cs" />
-    <Compile Include="Migrations\201909160149293_yanwei2019916949.Designer.cs">
-      <DependentUpon>201909160149293_yanwei2019916949.cs</DependentUpon>
+    <Compile Include="Migrations\201909160248282_merge10290916.cs" />
+    <Compile Include="Migrations\201909160248282_merge10290916.Designer.cs">
+      <DependentUpon>201909160248282_merge10290916.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\AbpZeroDbMigrator.cs" />
     <Compile Include="Migrations\Configuration.cs" />
@@ -329,20 +313,8 @@
     <EmbeddedResource Include="Migrations\201803200329425_init9.resx">
       <DependentUpon>201803200329425_init9.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909100819431_lichunlin201909101618.resx">
-      <DependentUpon>201909100819431_lichunlin201909101618.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909110400036_lichunlin201910.resx">
-      <DependentUpon>201909110400036_lichunlin201910.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909100808416_yanwei20199101608.resx">
-      <DependentUpon>201909100808416_yanwei20199101608.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909120830251_yanwei20199121630.resx">
-      <DependentUpon>201909120830251_yanwei20199121630.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909160149293_yanwei2019916949.resx">
-      <DependentUpon>201909160149293_yanwei2019916949.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201909160248282_merge10290916.resx">
+      <DependentUpon>201909160248282_merge10290916.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
