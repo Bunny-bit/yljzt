@@ -6,3 +6,5 @@ bin
 /Client/public/Ueditor/third-party/snapscreen/UEditorSnapscreen.exe
 /Client/public/Ueditor/third-party/snapscreen/*.exe
 /Server/.nuget/*.exe
+bin
+/Client/src/*.js

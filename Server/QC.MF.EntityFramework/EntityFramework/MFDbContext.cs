@@ -34,6 +34,7 @@ namespace QC.MF.EntityFramework
         public IDbSet<FileSettingDemo> GetSetDemo { get; set; }
         public IDbSet<AppStartPage> AppStartPage { get; set; }
         public IDbSet<Xueyuan.Xueyuan> Xueyuan { get; set; }
+        public IDbSet<Renyua.Renyua1> Renyua { get; set; }
 
         /* NOTE: 
          *   Setting "Default" to base class helps us when working migration commands on Package Manager Console.

@@ -1,0 +1,51 @@
+.container {
+    width: 100%;
+    min-height: 100%;
+    overflow: hidden;
+    background-image:url('./1.png');
+  }
+
+
+  .content {
+    width: 50%;
+    margin: 0 auto;
+  }
+
+  .contents {
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 15px;
+    margin-left: 265px;
+    font-size: 28px;
+    font-style:italic;
+    color: aliceblue;
+  }
+
+  .contentl {
+    margin: 0 auto;
+    margin-left: 240px;
+    font-size: 20px;
+  }
+
+  .main{
+    margin-top: 25px;  
+    margin-left: 65px;
+    margin-right: 65px;
+    padding-bottom: 25px;
+  }
+
+  .xinxi{
+    font-size: 20px;
+    color: rgb(250, 250, 250);
+  }
+
+  .box{
+    box-shadow:0 0 20px rgba(0,0,0,.4);
+  }
+
+  .images{
+    margin-top: 10px;
+    margin-left: 280px;
+    width: 20%;
+    height: 20%;
+  }

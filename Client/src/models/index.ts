@@ -27,6 +27,7 @@ import crud from './crud';
 import serverImageBrowse from './serverImageBrowse';
 import appEdition from './appEdition';
 import xueyuan from './xueyuan';
+import renyua from './renyua';
 /**
  * index.js
  * Created by 李廷旭 on 2017/9/5 10:15
@@ -62,4 +63,5 @@ export function registerModels(app) {
 	app.model(serverImageBrowse);
 	app.model(appEdition);
 	app.model(xueyuan);
+	app.model(renyua);
 }
