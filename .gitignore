@@ -3,3 +3,4 @@ packages
 .vs
 Debug
 bin
+/Client/public/Ueditor/third-party/snapscreen/UEditorSnapscreen.exe
