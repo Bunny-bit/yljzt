@@ -458,6 +458,12 @@
     <Compile Include="Users\Profile\ProfileAppService.cs" />
     <Compile Include="Users\UserAppService.cs" />
     <Compile Include="Users\UserLoginAppService.cs" />
+    <Compile Include="Xueyuans\Dto\CreatexueyuanDto.cs" />
+    <Compile Include="Xueyuans\Dto\GetListxueyuanDto.cs" />
+    <Compile Include="Xueyuans\Dto\GetxueyuanDto.cs" />
+    <Compile Include="Xueyuans\Dto\UpdatexueyuanDto.cs" />
+    <Compile Include="Xueyuans\IXueyuanAppService.cs" />
+    <Compile Include="Xueyuans\XueyuanAppService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

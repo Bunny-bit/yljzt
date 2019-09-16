@@ -38,6 +38,8 @@ import GetsetDemo from './routes/GetsetDemo/GetsetDemo';
 import UserCRUDDemo from './routes/UserCRUDDemo/User';
 import AppEdition from './routes/AppEdition/AppEdition';
 import AppStartPage from './routes/AppStartPage/AppStartPage';
+import Xueyuan from './routes/Xueyuan/Xueyuan';
+import LuruXueyuan from './routes/Xueyuan/LuruXueyuan';
 import Renyua from './routes/Renyua/Renyua';
 import Renyuas from './routes/Renyua/Renyuas';
 /**
@@ -88,8 +90,11 @@ export default function RouterConfig({ history }) {
 					<Route path="/userCRUDDemo" component={UserCRUDDemo} />
 					<Route path="/appEdition" component={AppEdition} />
 					<Route path="/appStartPage" component={AppStartPage} />
+					<Route path="/xueyuan" component={Xueyuan} />
 					<Route path="/renyua" component={Renyua} />
 				</Route>
+
+				<Route path="/luruxueyuan" component={LuruXueyuan} />
 				<Route path="/renyuas" component={Renyuas} />
 			</Router>
 		</LocaleProvider>
