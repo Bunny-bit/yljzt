@@ -7,7 +7,6 @@ const FormItem = Form.Item;
 
 const { TextArea } = Input;
 import * as api from '../../api/api';
-
 import CRUD from '../CRUD/CRUD';
 import moment from 'moment';
 
@@ -30,7 +29,7 @@ function Renyua({ form, record }) {
         },
         {
             title: '班级',
-            dataIndex: 'bankji',
+            dataIndex: 'banji',
             sorter: true
         },
     ];
@@ -45,7 +44,7 @@ function Renyua({ form, record }) {
                 {getFieldDecorator('name', {
                     initialValue: record.name,
                     rules: [{ required: true, message: '请填写名称' }]
-                })(<Input />)}
+                })(<Input/>)}
             </FormItem>
             <FormItem label="学院" {...formCol}>
                 {getFieldDecorator('xueyua', {
@@ -58,7 +57,7 @@ function Renyua({ form, record }) {
                 })(<InputNumber />)}
             </FormItem>
             <FormItem label="班级" {...formCol}>
-                {getFieldDecorator('bankji', {
+                {getFieldDecorator('banji', {
                     initialValue: record.location && record.location.longitude
                 })(<Input />)}
             </FormItem>

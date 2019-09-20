@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
  
-import url from 'url';
+import url from 'url'; 
 const portableFetch = fetch;
 import { Configuration } from './configuration';
 

@@ -18,7 +18,6 @@ function Xueyuan({ form, record }) {
 			dataIndex: 'name',
 			sorter: true
 		},
-		
 	const { getFieldDecorator } = form;
 	const formCol = {
 		labelCol: { span: 8 },
