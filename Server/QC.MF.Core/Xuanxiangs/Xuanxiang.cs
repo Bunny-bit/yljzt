@@ -12,6 +12,6 @@ namespace QC.MF.Xuanxiangs
         public int TimuId { get; set; }
         public string Name { get; set; }
         public string Neirong { get; set; }
-
+        public bool IsRight { get; set; }
     }
 }

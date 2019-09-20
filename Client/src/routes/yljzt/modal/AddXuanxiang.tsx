@@ -34,7 +34,8 @@ function AddXuanxiang({ dispatch, form, visible,currentTimuId }) {
 								payload: {
 									timuId:currentTimuId,
 									name: values.name,
-									neirong: values.neirong
+									neirong: values.neirong,
+									isRight: values.isRight,
 								}
 							});
 
@@ -61,6 +62,10 @@ function AddXuanxiang({ dispatch, form, visible,currentTimuId }) {
 						initialValue: '',
 						rules: [ { required: true, message: '请填写选项内容' } ]
 					})(<Input />)}
+				</FormItem>
+				<FormItem label="正确答案：" labelCol={{ span: 6 }} wrapperCol={{ span: 15 }}>
+					{getFieldDecorator('isRight', {
+					})(<Checkbox />)}
 				</FormItem>
 			</Form>
 		</Modal>

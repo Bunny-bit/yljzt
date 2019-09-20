@@ -9,7 +9,11 @@ namespace QC.MF.Daans
 {
     public class Daan : Entity
     {
-        public  string DaanId { get; set; }
-        public string DaanNeirong { get; set; }
+        public int RenyuanId{get;set;}
+
+        public  int TimuId { get; set; }
+
+        public int XuanxiangId { get; set; }
+
     }
 }

@@ -9,7 +9,7 @@ const create = Form.create;
 const RadioItem = Radio.RadioItem;
 import styles from './Renyuas.css';
 
-function Renyuas({ dispatch, form, isLoading, data, values }) {
+function Renyuas({ dispatch, form, isLoading, timus, answers }) {
 
     const { getFieldDecorator } = form;
 
@@ -22,9 +22,20 @@ function Renyuas({ dispatch, form, isLoading, data, values }) {
                 "xuehao": values.xuehao,
                 "banji": values.banji
             };
+            let result = [];
+            for(var i in timus)
+            {
+                if(answers[timus[i].id]){
+                    result.push({
+                        "timuId": timus[i].id,
+                        "xuanxiangId": answers[timus[i].id]
+                    })
+                }
+            }
+            data.answers = result;
             if (!err) {
                 dispatch({
-                    type: 'renyua/createrenyua',
+                    type: 'renyua/submit',
                     payload: data
                 });
             }
@@ -43,27 +54,28 @@ function Renyuas({ dispatch, form, isLoading, data, values }) {
     });
 
 
-    dataSource = dataSource.cloneWithRows(data);
+    dataSource = dataSource.cloneWithRows(timus);
 
     const row = (rowData, sectionID, rowID) => {
-        const obj = data[rowID];
+        const obj = timus[rowID];
         return (
             <div key={rowID} style={{ padding: '0 0' }}>
                 <div>
                     <div style={{ lineHeight: 1 }}>
-                        <List renderHeader={() => { return obj.title }}>
+                        <List renderHeader={() => (<div style={{fontSize:"32px"}}>{obj.title}</div>) }>
                             {obj.answers.map(v => {
                                 return (
-                                    <RadioItem key={v}
-                                        checked={values[obj.id + ""] === v}
+                                    <RadioItem key={v.id}
+                                        checked={answers[obj.id + ""] === v.xuanxiangId}
                                         onChange={() => {
-                                            values[obj.id + ""] = v;
+                                            answers[obj.id + ""] = v.xuanxiangId;
                                             dispatch({
                                                 type: "renyua/setState",
-                                                payload: { values: { ...values } }
+                                                payload: { answers: { ...answers } }
                                             });
+                                            console.log(answers);
                                         }}>
-                                        {v}
+                                        {v.name + ". " + v.neirong}
                                     </RadioItem>
                                 )
                             })
@@ -101,7 +113,7 @@ function Renyuas({ dispatch, form, isLoading, data, values }) {
                                 className="am-list"
                                 pageSize={4}
                                 scrollRenderAheadDistance={500}
-                                style={{ height: 247 * data.length + "px" }}
+                                style={{ height: 247 * timus.length + "px" }}
                             /> 
 
                             <Form onSubmit={handleSubmit}>

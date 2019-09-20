@@ -4,39 +4,32 @@ import { createApiAuthParam } from './../api/apiUtil.js';
 export default {
 	namespace: 'renyua',
 	state: {
-		data: [{
-			id: 1,
-			title: '第一题',
-			answers:["A", "B", "C","D"]
-		}, {
-			id: 2,
-			title: '第二题',
-			answers:["A", "B", "C","D"]
-		}, {
-			id: 3,
-			title: '第三题',
-			answers:["A", "B", "C","D"]
-		}, {
-			id: 4,
-			title: '第四题',
-			answers:["A", "B", "C","D"]
-		}],
+		timus: [],
 		isLoading: false,
-
-		values: {},
+		answers: {}
 	},
 	//订阅
 	subscriptions: {
 		setup({ dispatch, history }) {
-
+			return history.listen(({ pathname, state }) => {
+				if (pathname.toLowerCase() == '/renyuas'.toLowerCase()) {
+					dispatch({
+						type: 'getTimus',
+						payload: {
+							current: 1,
+							pageSize: 10000
+						}
+					});
+				}
+			});
 		}
 	},
 
 	effects: {
-		*createrenyua({ payload }, { call, put }) {
+		*submit({ payload }, { call, put }) {
 			const data = yield call(
 				...createApiAuthParam({
-					method: new api.RenyuaApi().appRenyuaCreate,
+					method: new api.DaanApi().appDaanAnswer,
 					payload: payload
 				})
 			);
@@ -45,6 +38,39 @@ export default {
 					message: '保存成功',
 					description: '恭喜你保存成功'
 				});
+			}
+		},
+		*getTimus({ payload }, { call, put }) {
+			const data = yield call(
+				...createApiAuthParam({
+					method: new api.YljztApi().appYljztGetAll,
+					payload: payload
+				})
+			);
+			if (data.success) {
+				let timus = [];
+				data.result.items.map(item=>{
+					
+					let answers = [];
+					for(var i in item.xuanxiangs){
+						let xx = item.xuanxiangs[i]
+						answers.push({
+							xuanxiangId:xx.id, 
+							timuId: xx.timuId, 
+							name:xx.name, 
+							neirong:xx.neirong
+						});
+					}
+					timus.push({
+						id:item.id,
+						title:item.tiHao + ". " + item.tiMu,
+						answers:answers
+					})
+				})
+				yield put({
+					type:"setState",
+					payload:{timus:timus}
+				})
 			}
 		},
 	},

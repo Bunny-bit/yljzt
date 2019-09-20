@@ -16,9 +16,11 @@ namespace QC.MF.Renyua.Dto
         public string Xueyua { get; set; }
 
 
-        public int Xuehao { get; set; }
+        public string Xuehao { get; set; }
 
 
         public string Banji { get; set; }
+
+
     }
 }

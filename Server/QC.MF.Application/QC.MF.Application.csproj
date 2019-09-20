@@ -326,6 +326,10 @@
     <Compile Include="AppStartPages\Dto\GetListAppStartPageDto.cs" />
     <Compile Include="AppStartPages\Dto\UpdateAppStartPageDto.cs" />
     <Compile Include="AppStartPages\IAppStartPageAppService.cs" />
+    <Compile Include="Daans\DaanAppService.cs" />
+    <Compile Include="Daans\Dto\AnswerInput.cs" />
+    <Compile Include="Daans\Dto\AnswerOutput.cs" />
+    <Compile Include="Daans\IDaanAppService.cs" />
     <Compile Include="DragVerifications\DragVerificationAppService.cs" />
     <Compile Include="DragVerifications\Dto\CheckCodeInput.cs" />
     <Compile Include="DragVerifications\Dto\CheckCodeOutput.cs" />

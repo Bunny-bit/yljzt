@@ -9,6 +9,7 @@ namespace QC.MF.Yljzts
 {
     public class Tiku :Entity
     {
+
         public int TiHao { get; set; }
         public string TiMu { get; set; }
 

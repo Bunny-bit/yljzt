@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'dva';
-import { Form, Input, InputNumber, Badge, DatePicker } from 'antd';
+import { Form, Input, InputNumber, Badge, DatePicker, Row, Col,Icon } from 'antd';
+
 
 const create = Form.create;
 const FormItem = Form.Item;
@@ -12,7 +13,7 @@ import CRUD from '../CRUD/CRUD';
 import moment from 'moment';
 import AddXuanxiang from './modal/AddXuanxiang'
 
-function Yljzt({ form, record, visible,currentTimuId }) {
+function Yljzt({ form, record, visible, currentTimuId }) {
 	const columns = [
 		{
 			title: '题号',
@@ -24,7 +25,7 @@ function Yljzt({ form, record, visible,currentTimuId }) {
 			dataIndex: 'tiMu',
 			sorter: true
 		},
-		
+
 
 	];
 	const { getFieldDecorator } = form;
@@ -34,19 +35,19 @@ function Yljzt({ form, record, visible,currentTimuId }) {
 	};
 	const formNode = (
 		<Form>
+			<FormItem label="题号" {...formCol}>
+				{getFieldDecorator('tihao', {
+					initialValue: record.tihao
+				rules: [{ required: true, message: '请填写题号' }]
+				})(<Input />)}
+			</FormItem>
 			<FormItem label="题目" {...formCol}>
 				{getFieldDecorator('timu', {
 					initialValue: record.timu,
 					rules: [{ required: true, message: '请填写题目' }]
 				})(<Input />)}
 			</FormItem>
-			<FormItem label="题号" {...formCol}>
-				{getFieldDecorator('tihao', {
-					initialValue: record.tihao
-					rules: [{ required: true, message: '请填写题号' }]
-				})(<Input />)}
-			</FormItem>
-			
+
 		</Form>
 	);
 	const filters = [
@@ -56,24 +57,33 @@ function Yljzt({ form, record, visible,currentTimuId }) {
 			option: 'like'
 		},
 	];
-	
+
 	const expandedRowRender = (r) => {
 
-		return(<div>
+		return (<div>
 			{
-				r.xuanxiangs.map(x=>(
-					<div>
-						{x.name} {x.neirong}
-						<a onClick={()=>{
+				r.xuanxiangs.map(x => (
+					<Row>
+						<Col span={1}>
+							{x.isRight ? <Icon type="check-circle" /> : <Icon type="close-circle" />}
+							{x.name}
+						</Col>
+						<Col  span={21}> {x.neirong}</Col>
+						<Col  span={2}>
+
+
+
+							<a onClick={() => {
 								dispatch({
 									type: 'yljzt/deleteXuanxiang',
 									payload: {
-										id:x.id
+										id: x.id
 									}
 								});
 
 							}}>删除</a>
-					</div>
+						</Col>
+					</Row>
 				))
 			}
 		</div>)
@@ -94,7 +104,7 @@ function Yljzt({ form, record, visible,currentTimuId }) {
 						<a onClick={() => {
 							dispatch({
 								type: "yljzt/setState",
-								payload: { 
+								payload: {
 									visible: true,
 									currentTimuId: r.id
 								}
@@ -110,7 +120,7 @@ function Yljzt({ form, record, visible,currentTimuId }) {
 					searchProvide: 'sql'
 				}}
 
-				tableProps={{expandedRowRender:expandedRowRender}}
+				tableProps={{ expandedRowRender: expandedRowRender }}
 			/>
 			{visible ? (<AddXuanxiang />) : null}
 		</div>
@@ -121,7 +131,7 @@ Yljzt = connect((state) => {
 	return {
 		...state.crud,
 		visible: state.yljzt.visible,
-		currentTimuId:state.yljzt.currentTimuId,
+		currentTimuId: state.yljzt.currentTimuId,
 	};
 })(Yljzt);
 export default create()(Yljzt);

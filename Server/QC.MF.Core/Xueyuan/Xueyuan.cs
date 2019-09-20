@@ -10,6 +10,5 @@ namespace QC.MF.Xueyuan
     public class Xueyuan : Entity<int>
     {
         public string Name { get; set; }
-       
     }
 }
