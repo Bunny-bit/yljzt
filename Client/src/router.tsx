@@ -38,6 +38,8 @@ import GetsetDemo from './routes/GetsetDemo/GetsetDemo';
 import UserCRUDDemo from './routes/UserCRUDDemo/User';
 import AppEdition from './routes/AppEdition/AppEdition';
 import AppStartPage from './routes/AppStartPage/AppStartPage';
+import Luruyljzt from './routes/yljzt/Luruyljzt';
+import Yljzt from './routes/yljzt/Yljzt';
 /**
  * router.js
  * Created by 李廷旭 on 2017/9/5 12:39
@@ -86,7 +88,10 @@ export default function RouterConfig({ history }) {
 					<Route path="/userCRUDDemo" component={UserCRUDDemo} />
 					<Route path="/appEdition" component={AppEdition} />
 					<Route path="/appStartPage" component={AppStartPage} />
+					<Route path="/yljzt" component={Yljzt} />
 				</Route>
+			
+				<Route path="/luruyljzt" component={Luruyljzt} />
 			</Router>
 		</LocaleProvider>
 	);

@@ -398,23 +398,15 @@
     <Content Include="App_Data\DragVerificationImage\7.jpg" />
     <Content Include="App_Data\DragVerificationImage\8.jpg" />
     <Content Include="App_Data\DragVerificationImage\9.jpg" />
-
-
-
     <Content Include="Common\Images\default-profile-picture.png" />
     <Content Include="Common\logo.png" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Images\alipay.png" />
-
-
-
-
     <Content Include="Images\qq.png" />
     <Content Include="Images\wechat.png" />
     <Content Include="Images\weibo.png" />
     <Content Include="log4net.config" />
-
     <Content Include="App_Data\Documents\2. 使用指南\2.1. 从这里开始.md" />
     <Content Include="App_Data\Documents\4. FAQs\如何修改及扩充系统图标.md" />
     <Content Include="App_Data\Documents\4. FAQs\如何创建系统菜单.md" />
@@ -471,7 +463,6 @@
     <Compile Include="Controllers\CaptchaController.cs" />
     <Compile Include="Controllers\DocumentController.cs" />
     <Compile Include="Controllers\FileController.cs" />
-
     <Compile Include="Controllers\MFControllerBase.cs" />
     <Compile Include="Controllers\LogoController.cs" />
     <Compile Include="Controllers\ImageFileController.cs" />
@@ -486,10 +477,6 @@
     <Compile Include="Models\Account\ThirdPartyLoginModel.cs" />
     <Compile Include="Models\Account\ThirdPartyModel.cs" />
     <Compile Include="Models\Account\UnbindingThirdPartyModel.cs" />
-
-
-
-
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QRLogin\SignalR\QRCodeInfo.cs" />
     <Compile Include="QRLogin\SignalR\QRLoginHub.cs" />
@@ -501,15 +488,11 @@
     <Compile Include="UE\App_Code\NotSupportedHandler.cs" />
     <Compile Include="UE\App_Code\PathFormater.cs" />
     <Compile Include="UE\App_Code\UploadHandler.cs" />
-
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config">
       <SubType>Designer</SubType>
     </Content>
-
-
-
     <Content Include="UE\config.json" />
     <Content Include="UE\controller.ashx" />
     <Content Include="UE\README.md" />

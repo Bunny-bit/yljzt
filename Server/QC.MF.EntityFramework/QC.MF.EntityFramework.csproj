@@ -239,6 +239,30 @@
     <Compile Include="Migrations\201803200329425_init9.Designer.cs">
       <DependentUpon>201803200329425_init9.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201909160233103_xiemiaofan20190916.cs" />
+    <Compile Include="Migrations\201909160233103_xiemiaofan20190916.Designer.cs">
+      <DependentUpon>201909160233103_xiemiaofan20190916.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909160858540_xiemiaofan20199161658.cs" />
+    <Compile Include="Migrations\201909160858540_xiemiaofan20199161658.Designer.cs">
+      <DependentUpon>201909160858540_xiemiaofan20199161658.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909170104064_xiemiaofan2019917904.cs" />
+    <Compile Include="Migrations\201909170104064_xiemiaofan2019917904.Designer.cs">
+      <DependentUpon>201909170104064_xiemiaofan2019917904.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909170651067_xiemf20190917.cs" />
+    <Compile Include="Migrations\201909170651067_xiemf20190917.Designer.cs">
+      <DependentUpon>201909170651067_xiemf20190917.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909190741433_xiemf20190919.cs" />
+    <Compile Include="Migrations\201909190741433_xiemf20190919.Designer.cs">
+      <DependentUpon>201909190741433_xiemf20190919.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909190903256_xiemf201909191702.cs" />
+    <Compile Include="Migrations\201909190903256_xiemf201909191702.Designer.cs">
+      <DependentUpon>201909190903256_xiemf201909191702.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\AbpZeroDbMigrator.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MFDataModule.cs" />
@@ -308,6 +332,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201803200329425_init9.resx">
       <DependentUpon>201803200329425_init9.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909160233103_xiemiaofan20190916.resx">
+      <DependentUpon>201909160233103_xiemiaofan20190916.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909160858540_xiemiaofan20199161658.resx">
+      <DependentUpon>201909160858540_xiemiaofan20199161658.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909170104064_xiemiaofan2019917904.resx">
+      <DependentUpon>201909170104064_xiemiaofan2019917904.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909170651067_xiemf20190917.resx">
+      <DependentUpon>201909170651067_xiemf20190917.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909190741433_xiemf20190919.resx">
+      <DependentUpon>201909190741433_xiemf20190919.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909190903256_xiemf201909191702.resx">
+      <DependentUpon>201909190903256_xiemf201909191702.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

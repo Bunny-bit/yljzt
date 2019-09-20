@@ -452,6 +452,18 @@
     <Compile Include="Users\Profile\ProfileAppService.cs" />
     <Compile Include="Users\UserAppService.cs" />
     <Compile Include="Users\UserLoginAppService.cs" />
+    <Compile Include="Xuanxiangs\Dto\CreateXuanxiangDto.cs" />
+    <Compile Include="Xuanxiangs\Dto\GetListXuanxiangDto.cs" />
+    <Compile Include="Xuanxiangs\Dto\GetXuanxiangDto.cs" />
+    <Compile Include="Xuanxiangs\Dto\UpdateXuanxiangDto.cs" />
+    <Compile Include="Xuanxiangs\IXuanxiangAppService.cs" />
+    <Compile Include="Xuanxiangs\XuanxiangAppService.cs" />
+    <Compile Include="Yljzts\Dto\CreateYljztDto.cs" />
+    <Compile Include="Yljzts\Dto\GetListYljztDto.cs" />
+    <Compile Include="Yljzts\Dto\GetYljztDto.cs" />
+    <Compile Include="Yljzts\Dto\UpdateYljztDto.cs" />
+    <Compile Include="Yljzts\IYljztAppService.cs" />
+    <Compile Include="Yljzts\YljztAppService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
