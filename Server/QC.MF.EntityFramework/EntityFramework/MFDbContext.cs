@@ -37,6 +37,9 @@ namespace QC.MF.EntityFramework
         public IDbSet<AppStartPage> AppStartPage { get; set; }
         public IDbSet<Tiku> Timu { get; set; }
         public IDbSet<Xuanxiang> Xuanxiang { get; set; }
+        public IDbSet<Xueyuan.Xueyuan> Xueyuan { get; set; }
+        public IDbSet<Renyua.Renyua1> Renyua { get; set; }
+
         /* NOTE: 
          *   Setting "Default" to base class helps us when working migration commands on Package Manager Console.
          *   But it may cause problems when working Migrate.exe of EF. If you will apply migrations on command line, do not

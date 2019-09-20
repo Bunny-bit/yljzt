@@ -121,36 +121,6 @@ function Register({ dispatch, form, captcha, abled, hedhtml, thirdPartyToken }) 
 							/>
 						)}
 					</FormItem>
-					{/* <FormItem>
-						<span className={styles.colorsize}>验证码：</span>
-						{getFieldDecorator('captcha', {
-							rules: [ { required: true, message: '请输入验证码！' } ]
-						})(
-							<Row>
-								<Col span={16}>
-									<Input
-										prefix={<Icon type="lock" style={{ fontSize: 13 }} />}
-										type="captcha"
-										placeholder="验证码"
-										style={{ marginTop: '5px', height: 40 }}
-									/>
-								</Col>
-								<Col span={8} style={{ textAlign: 'right' }}>
-									<a onClick={refreshCaptcha}>
-										<img src={captcha} style={{ marginTop: '5px', height: 40 }} />
-									</a>
-								</Col>
-							</Row>
-						)}
-          </FormItem> */}
-					{/*<FormItem>
-							<span className={styles.colorsize}>验证码：</span>
-							<center>
-								{getFieldDecorator('captcha', {
-									rules: [ { required: true, message: '请拖动图片验证！' } ]
-								})(<DragVerification />)}
-							</center>
-						</FormItem>*/}
 					<FormItem>
 						<span className={styles.colorsize}>验证码：</span>
 						<center>

@@ -40,6 +40,10 @@ import AppEdition from './routes/AppEdition/AppEdition';
 import AppStartPage from './routes/AppStartPage/AppStartPage';
 import Luruyljzt from './routes/yljzt/Luruyljzt';
 import Yljzt from './routes/yljzt/Yljzt';
+import Xueyuan from './routes/Xueyuan/Xueyuan';
+import LuruXueyuan from './routes/Xueyuan/LuruXueyuan';
+import Renyua from './routes/Renyua/Renyua';
+import Renyuas from './routes/Renyua/Renyuas';
 /**
  * router.js
  * Created by 李廷旭 on 2017/9/5 12:39
@@ -47,7 +51,7 @@ import Yljzt from './routes/yljzt/Yljzt';
  */
 export default function RouterConfig({ history }) {
 	return (
-		<LocaleProvider locale={zhCN}>
+		<LocaleProvider locale={zhCN}>	
 			<Router history={history}>
 				<Route path="/" component={IndexPage} />
 				<Route path="/register" component={Register} />
@@ -89,9 +93,14 @@ export default function RouterConfig({ history }) {
 					<Route path="/appEdition" component={AppEdition} />
 					<Route path="/appStartPage" component={AppStartPage} />
 					<Route path="/yljzt" component={Yljzt} />
+					<Route path="/xueyuan" component={Xueyuan} />
+					<Route path="/renyua" component={Renyua} />
 				</Route>
 			
 				<Route path="/luruyljzt" component={Luruyljzt} />
+
+				<Route path="/luruxueyuan" component={LuruXueyuan} />
+				<Route path="/renyuas" component={Renyuas} />
 			</Router>
 		</LocaleProvider>
 	);

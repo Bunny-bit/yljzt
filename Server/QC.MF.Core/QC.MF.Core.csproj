@@ -273,6 +273,7 @@
     <Compile Include="Authorization\Users\User.cs" />
     <Compile Include="Authorization\Users\UserManager.cs" />
     <Compile Include="Authorization\Users\UserStore.cs" />
+    <Compile Include="Renyua\Renyua1.cs" />
     <Compile Include="Security\PasswordComplexityChecker.cs" />
     <Compile Include="Security\PasswordComplexitySetting.cs" />
     <Compile Include="SMSs\AliSMSSenderManager.cs" />
@@ -296,6 +297,7 @@
     <Compile Include="WebFiles\WebFileManager.cs" />
     <Compile Include="Web\IWebUrlService.cs" />
     <Compile Include="Web\WebUrlService.cs" />
+    <Compile Include="Xueyuan\Xueyuan.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config">

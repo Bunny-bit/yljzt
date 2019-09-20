@@ -1,0 +1,15 @@
+.container {
+    width: 100%;
+    min-height: 100%;
+    background: #4f5b75;
+    overflow: hidden;
+    background-image: url(./1.png)
+  }
+
+  .content {
+    width: 50%;
+   margin: 0 auto;
+  }
+  .const{
+    font-size: 50px;
+  }

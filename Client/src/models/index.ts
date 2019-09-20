@@ -26,6 +26,8 @@ import getSet from './getSet';
 import crud from './crud';
 import serverImageBrowse from './serverImageBrowse';
 import appEdition from './appEdition';
+import xueyuan from './xueyuan';
+import renyua from './renyua';
 import yljzt from './yljzt';
 /**
  * index.js
@@ -62,4 +64,6 @@ export function registerModels(app) {
 	app.model(serverImageBrowse);
 	app.model(appEdition);
 	app.model(yljzt);
+	app.model(xueyuan);
+	app.model(renyua);
 }
