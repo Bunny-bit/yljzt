@@ -25,6 +25,11 @@ export const COLLECTION_FORMATS = {
     csv: ",",
     ssv: " ",
     tsv: "\t",
+ */
+export const COLLECTION_FORMATS = {
+    csv: ",",
+    ssv: " ",
+    tsv: "\t",
     pipes: "|",
 };
 

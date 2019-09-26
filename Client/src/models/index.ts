@@ -29,6 +29,7 @@ import appEdition from './appEdition';
 import xueyuan from './xueyuan';
 import renyua from './renyua';
 import yljzt from './yljzt';
+import bingtu from './bingtu';
 /**
  * index.js
  * Created by 李廷旭 on 2017/9/5 10:15
@@ -66,4 +67,5 @@ export function registerModels(app) {
 	app.model(yljzt);
 	app.model(xueyuan);
 	app.model(renyua);
+	app.model(bingtu);
 }

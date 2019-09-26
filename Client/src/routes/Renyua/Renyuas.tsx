@@ -23,9 +23,8 @@ function Renyuas({ dispatch, form, isLoading, timus, answers }) {
                 "banji": values.banji
             };
             let result = [];
-            for(var i in timus)
-            {
-                if(answers[timus[i].id]){
+            for (var i in timus) {
+                if (answers[timus[i].id]) {
                     result.push({
                         "timuId": timus[i].id,
                         "xuanxiangId": answers[timus[i].id]
@@ -53,37 +52,31 @@ function Renyuas({ dispatch, form, isLoading, timus, answers }) {
         rowHasChanged: (row1, row2) => row1 !== row2,
     });
 
-
     dataSource = dataSource.cloneWithRows(timus);
 
     const row = (rowData, sectionID, rowID) => {
         const obj = timus[rowID];
         return (
-            <div key={rowID} style={{ padding: '0 0' }}>
-                <div>
-                    <div style={{ lineHeight: 1 }}>
-                        <List renderHeader={() => (<div style={{fontSize:"32px"}}>{obj.title}</div>) }>
-                            {obj.answers.map(v => {
-                                return (
-                                    <RadioItem key={v.id}
-                                        checked={answers[obj.id + ""] === v.xuanxiangId}
-                                        onChange={() => {
-                                            answers[obj.id + ""] = v.xuanxiangId;
-                                            dispatch({
-                                                type: "renyua/setState",
-                                                payload: { answers: { ...answers } }
-                                            });
-                                            console.log(answers);
-                                        }}>
-                                        {v.name + ". " + v.neirong}
-                                    </RadioItem>
-                                )
-                            })
-                            }
-                        </List>
-
-
-                    </div>
+            <div key={rowID} style={{ padding: '0 15px' }}>
+                <div style={{ lineHeight: 1 }}>
+                    <List renderHeader={() => (<div className={styles.titles} style={{ fontSize: "20px" }}>{obj.title}</div>)}>
+                        {obj.answers.map(v => {
+                            return (
+                                <RadioItem key={v.id}
+                                    checked={answers[obj.id + ""] === v.xuanxiangId}
+                                    onChange={() => {
+                                        answers[obj.id + ""] = v.xuanxiangId;
+                                        dispatch({
+                                            type: "renyua/setState",
+                                            payload: { answers: { ...answers } }
+                                        });
+                                        console.log(answers);
+                                    }}>
+                                    {v.name + ". " + v.neirong}
+                                </RadioItem>
+                            )
+                        })}
+                    </List>
                 </div>
             </div>
         );
@@ -114,7 +107,7 @@ function Renyuas({ dispatch, form, isLoading, timus, answers }) {
                                 pageSize={4}
                                 scrollRenderAheadDistance={500}
                                 style={{ height: 247 * timus.length + "px" }}
-                            /> 
+                            />
 
                             <Form onSubmit={handleSubmit}>
                                 <FormItem>
@@ -155,7 +148,7 @@ function Renyuas({ dispatch, form, isLoading, timus, answers }) {
                                 </FormItem>
 
                                 <Button type="primary" htmlType="submit" className={styles.contentl} >
-                                   提交
+                                    提交
 					                </Button>
                             </Form>
                         </div>

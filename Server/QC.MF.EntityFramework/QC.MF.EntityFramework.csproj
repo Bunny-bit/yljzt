@@ -251,6 +251,10 @@
     <Compile Include="Migrations\201909200931529_fanyao2019092001.Designer.cs">
       <DependentUpon>201909200931529_fanyao2019092001.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201909241053434_yanwei20199241853.cs" />
+    <Compile Include="Migrations\201909241053434_yanwei20199241853.Designer.cs">
+      <DependentUpon>201909241053434_yanwei20199241853.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\AbpZeroDbMigrator.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MFDataModule.cs" />
@@ -329,6 +333,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201909200931529_fanyao2019092001.resx">
       <DependentUpon>201909200931529_fanyao2019092001.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909241053434_yanwei20199241853.resx">
+      <DependentUpon>201909241053434_yanwei20199241853.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -5,7 +5,7 @@ import {Row, Col} from 'antd';
 import data from './echart.json';
 import datas from './ditu.json';
 function createData(source) {
-  const now = new Date();
+  const now = new Date(); 
   const time = now.getTime();
   const temperature1 = ~~(Math.random() * 5) + 22;
   const temperature2 = ~~(Math.random() * 7) + 17;

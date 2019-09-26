@@ -3,7 +3,7 @@
   min-height: 100%;
   overflow: hidden;
   background: #7d1523;
-  padding-bottom: 45px;
+  padding-bottom: 30px;
 }
 
 .content {
@@ -20,7 +20,7 @@
 .contentl {
   margin: 0 auto;
   margin-left: 144px;
-  margin-top:15px;
+  margin-top:20px;
   font-size: 20px;
 }
 
@@ -40,16 +40,7 @@
   border-radius: 10px;
 }
 
-.am-list-header {
-  font-size: 30px!important;
-}
-
-.body {
-  :global(.am-list-header) {
-    padding: 15px 15px 9px 15px;
-    font-size:14px;
-    color: #888;
-    width: 100%;
-    box-sizing: border-box
-  }
+.titles{
+  color: black;
+  font-weight: 500;
 }

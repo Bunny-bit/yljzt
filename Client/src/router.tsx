@@ -43,6 +43,7 @@ import Yljzt from './routes/yljzt/Yljzt';
 import Xueyuan from './routes/Xueyuan/Xueyuan';
 import LuruXueyuan from './routes/Xueyuan/LuruXueyuan';
 import Renyua from './routes/Renyua/Renyua';
+import Bingtu from './routes/Renyua/bingtu/bingtu';
 import Renyuas from './routes/Renyua/Renyuas';
 /**
  * router.js
@@ -95,6 +96,7 @@ export default function RouterConfig({ history }) {
 					<Route path="/yljzt" component={Yljzt} />
 					<Route path="/xueyuan" component={Xueyuan} />
 					<Route path="/renyua" component={Renyua} />
+					<Route path="/bingtu" component={Bingtu} />
 				</Route>
 			
 				<Route path="/luruyljzt" component={Luruyljzt} />
