@@ -2,7 +2,7 @@ $currentPath = Split-Path -Parent $MyInvocation.MyCommand.Definition
 $rootPath = Split-Path -Parent $currentPath
 
 cd $currentPath
-$result =  Invoke-WebRequest -Method "POST"  -Uri "http://mf.kingyuer.cn/api/services/app/interfaceExport/GetReactDownloadUrl"
+$result =  Invoke-WebRequest -Method "POST"  -Uri "http://localhost:6634/api/services/app/interfaceExport/GetReactDownloadUrl"
 $info = ConvertFrom-Json -InputObject $result.Content
 $url = $info.result
 Invoke-WebRequest -Uri "$url" -OutFile "typescript-fetch-client-generated.zip"
@@ -19,5 +19,6 @@ Remove-Item -Path "typescript-fetch-client" -Force -Recurse
 Remove-Item -Path "typescript-fetch-client-generated.zip" -Force
 
 cd $rootPath
+
 
 .\node_modules\.bin\tsc.cmd $rootPath"\src\api\api.ts"

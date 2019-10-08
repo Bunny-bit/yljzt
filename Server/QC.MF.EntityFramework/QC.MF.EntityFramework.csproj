@@ -239,6 +239,22 @@
     <Compile Include="Migrations\201803200329425_init9.Designer.cs">
       <DependentUpon>201803200329425_init9.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201909110330414_zhamy20199111123.cs" />
+    <Compile Include="Migrations\201909110330414_zhamy20199111123.Designer.cs">
+      <DependentUpon>201909110330414_zhamy20199111123.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909120722138_zhamy2019912.cs" />
+    <Compile Include="Migrations\201909120722138_zhamy2019912.Designer.cs">
+      <DependentUpon>201909120722138_zhamy2019912.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909120812116_zhamy20199121.cs" />
+    <Compile Include="Migrations\201909120812116_zhamy20199121.Designer.cs">
+      <DependentUpon>201909120812116_zhamy20199121.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909120824320_zhamy20199122.cs" />
+    <Compile Include="Migrations\201909120824320_zhamy20199122.Designer.cs">
+      <DependentUpon>201909120824320_zhamy20199122.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\AbpZeroDbMigrator.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MFDataModule.cs" />
@@ -308,6 +324,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201803200329425_init9.resx">
       <DependentUpon>201803200329425_init9.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909110330414_zhamy20199111123.resx">
+      <DependentUpon>201909110330414_zhamy20199111123.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909120722138_zhamy2019912.resx">
+      <DependentUpon>201909120722138_zhamy2019912.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909120812116_zhamy20199121.resx">
+      <DependentUpon>201909120812116_zhamy20199121.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909120824320_zhamy20199122.resx">
+      <DependentUpon>201909120824320_zhamy20199122.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

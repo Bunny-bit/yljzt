@@ -17,22 +17,22 @@
   },
   "proxy": {
     "/api": {
-      "target": "http://xxx.xxx.xxx.xxx:666/",
+      "target": "http://localhost:6634/",
       "changeOrigin": true,
       "pathRewrite": { "^/api" : "" }
     },
     "/signalr": {
-      "target": "http://xxx.xxx.xxx.xxx:666/",
+      "target": "http://localhost:6634/",
       "changeOrigin": true,
       "pathRewrite": { "^/signalr" : "/signalr" }
     },
     "/UE": {
-      "target": "http://xxx.xxx.xxx.xxx:666/",
+      "target": "http://localhost:6634/",
       "changeOrigin": true,
       "pathRewrite": { "^/UE" : "/UE" }
     },
     "/Common": {
-      "target": "http://xxx.xxx.xxx.xxx:666/",
+      "target": "http://localhost:6634/",
       "changeOrigin": true,
       "pathRewrite": { "^/Common" : "/Common" }
     }
