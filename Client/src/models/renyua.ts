@@ -17,7 +17,7 @@ export default {
 						type: 'getTimus',
 						payload: {
 							current: 1,
-							pageSize: 10000
+							maxResultCount: 1
 						}
 					});
 				}
@@ -43,14 +43,13 @@ export default {
 		*getTimus({ payload }, { call, put }) {
 			const data = yield call(
 				...createApiAuthParam({
-					method: new api.YljztApi().appYljztGetAll,
+					method: new api.YljztApi().appYljztGetDajuan,
 					payload: payload
 				})
 			);
 			if (data.success) {
 				let timus = [];
 				data.result.items.map(item=>{
-					
 					let answers = [];
 					for(var i in item.xuanxiangs){
 						let xx = item.xuanxiangs[i]

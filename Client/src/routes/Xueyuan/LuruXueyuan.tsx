@@ -15,53 +15,53 @@ function LuruXueyuan({ dispatch, form }) {
 			console.log(values)
 			let data = {
 				"xueyuan": values.xueyuan
-			}
+			};
 			if (!err) {
 				dispatch({
 					type: 'xueyuan/creatXueyuan',
 					payload: data
 				});
 			}
-		}
+		})
 	}
 
 	const formCol = {
-			labelCol: { span: 8 },
-			wrapperCol: { span: 12 }
-		};
-		return (
-			<div className={styles.container}>
-				<div className={styles.content}>
+		labelCol: { span: 8 },
+		wrapperCol: { span: 12 }
+	};
+	return (
+		<div className={styles.container}>
+			<div className={styles.content}>
 
-					<section>
-						<Form onSubmit={handleSubmit} >
-							<div>学院</div>
-							<FormItem label="名称"{...formCol}>
-								<span>名称</span>
-								{getFieldDecorator('xueyuan', {
-									rules: [{ required: true, message: '请输入名称！' }]
-								})(
-									<Input />
-								)}
-							</FormItem>
+				<section>
+					<Form onSubmit={handleSubmit} >
+						<div>学院</div>
+						<FormItem label="名称"{...formCol}>
+							<span>名称</span>
+							{getFieldDecorator('xueyuan', {
+								rules: [{ required: true, message: '请输入名称！' }]
+							})(
+								<Input />
+							)}
+						</FormItem>
 
 
 
-							<Button type="primary" htmlType="submit">
-								登录
+						<Button type="primary" htmlType="submit">
+							登录
 					</Button>
-						</Form>
+					</Form>
 
-					</section>
-				</div>
+				</section>
 			</div>
-		);
-	}
+		</div>
+	);
+}
 
-	LuruXueyuan = connect((state) => {
-		return {
-			...state.xueyuan,
-		};
-	})(LuruXueyuan);
+LuruXueyuan = connect((state) => {
+	return {
+		...state.xueyuan,
+	};
+})(LuruXueyuan);
 
-	export default create()(LuruXueyuan);
+export default create()(LuruXueyuan);

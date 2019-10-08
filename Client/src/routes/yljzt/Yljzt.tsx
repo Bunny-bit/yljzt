@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'dva';
-import { Form, Input, InputNumber, Badge, DatePicker, Row, Col,Icon } from 'antd';
+import { Form, Input, InputNumber, Badge, DatePicker, Row, Col, Icon } from 'antd';
 
 
 const create = Form.create;
@@ -37,8 +37,8 @@ function Yljzt({ form, record, visible, currentTimuId }) {
 		<Form>
 			<FormItem label="题号" {...formCol}>
 				{getFieldDecorator('tihao', {
-					initialValue: record.tihao
-				rules: [{ required: true, message: '请填写题号' }]
+					initialValue: record.tihao,
+					rules: [{ required: true, message: '请填写题号' }]
 				})(<Input />)}
 			</FormItem>
 			<FormItem label="题目" {...formCol}>
@@ -64,12 +64,15 @@ function Yljzt({ form, record, visible, currentTimuId }) {
 			{
 				r.xuanxiangs.map(x => (
 					<Row>
-						<Col span={1}>
-							{x.isRight ? <Icon type="check-circle" /> : <Icon type="close-circle" />}
-							{x.name}
+						<Col offset={1} span={1}>
+							{x.isRight ? <Icon type="check-circle" style={{color:"green"}}/> : <Icon type="close-circle"  style={{color:"red"}}/>}
 						</Col>
-						<Col  span={21}> {x.neirong}</Col>
-						<Col  span={2}>
+						
+						<Col span={2}>
+						{x.name}
+						</Col>
+						<Col span={18}> {x.neirong}</Col>
+						<Col span={2}>
 
 
 
