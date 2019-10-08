@@ -62,8 +62,8 @@ function Renyuas({ dispatch, form, isLoading, timus, answers }) {
                     <List renderHeader={() => (<div className={styles.titles} style={{ fontSize: "20px" }}>{obj.title}</div>)}>
                         {obj.answers.map(v => {
                             return (
-                                <RadioItem key={v.id}
-                                    checked={answers[obj.id + ""] === v.xuanxiangId}
+                                <RadioItem key={v.xuanxiangId}
+                                    checked={answers[obj.id + ""] == v.xuanxiangId}
                                     onChange={() => {
                                         answers[obj.id + ""] = v.xuanxiangId;
                                         dispatch({
@@ -72,7 +72,7 @@ function Renyuas({ dispatch, form, isLoading, timus, answers }) {
                                         });
                                         console.log(answers);
                                     }}>
-                                    {v.name + ". " + v.neirong}
+                                    <div style={{width:"80%"}}>{v.name + ". " + v.neirong}</div>
                                 </RadioItem>
                             )
                         })}

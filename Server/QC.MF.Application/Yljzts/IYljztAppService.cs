@@ -14,5 +14,7 @@ namespace QC.MF.Yljzts
     public interface IYljztAppService:IAsyncCrudAppService<GetListYljztDto, int, PagedSortedAndFilteredInputDto, CreateYljztDto, UpdateYljztDto>
     {
         Task<PagedResultDto<GetListYljztDto>> GetDajuan(PagedSortedAndFilteredInputDto input);
+
+        List<ZhengQueShuZuiGao> GetZhengQueShuZuiGao();
     }
 }
