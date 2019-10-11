@@ -20,4 +20,5 @@ Remove-Item -Path "typescript-fetch-client-generated.zip" -Force
 
 cd $rootPath
 
+
 .\node_modules\.bin\tsc.cmd $rootPath"\src\api\api.ts"

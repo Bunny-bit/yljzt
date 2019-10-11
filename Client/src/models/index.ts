@@ -30,6 +30,8 @@ import xueyuan from './xueyuan';
 import renyua from './renyua';
 import yljzt from './yljzt';
 import bingtu from './bingtu';
+import renyuan from './renyuan';
+import datitu from './datitu';
 /**
  * index.js
  * Created by 李廷旭 on 2017/9/5 10:15
@@ -68,4 +70,6 @@ export function registerModels(app) {
 	app.model(xueyuan);
 	app.model(renyua);
 	app.model(bingtu);
+	app.model(renyuan);
+	app.model(datitu);
 }
