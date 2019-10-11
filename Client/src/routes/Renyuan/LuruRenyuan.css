@@ -1,0 +1,23 @@
+.container {
+    width: 100%;
+    min-height: 100%;
+    overflow: hidden;
+  }
+  .content{
+      width:50%;
+      margin:0 auto;
+  }
+  .xingxi{
+      text-align: center;
+      font-size: 20px;
+      font-weight:bold;
+      margin-top: 40px;
+      color:white;
+  }
+  .tijiao{
+    text-align: center;
+  }
+  .xingming{
+    margin-top: 20px;
+    color:rgb(12, 12, 12);
+  }
