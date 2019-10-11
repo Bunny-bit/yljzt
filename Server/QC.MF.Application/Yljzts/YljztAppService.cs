@@ -19,17 +19,20 @@ namespace QC.MF.Yljzts
         private readonly IRepository<Xuanxiang, int> _xuanxiangRepository;
         private readonly IRepository<Daan, int> _daanRepository;
         private readonly IRepository<Renyua1, int> _renyuanRepository;
+        private readonly IRepository<Tiku, int> _tikuRepository;
 
         public YljztAppService(
             Abp.Domain.Repositories.IRepository<Tiku, int> repository,
             IRepository<Xuanxiang, int> xuanxiangRepository,
             IRepository<Daan, int> daanRepository,
-            IRepository<Renyua1, int> renyuanRepository
+            IRepository<Renyua1, int> renyuanRepository,
+            IRepository<Tiku, int> tikuRepository
             ) : base(repository)
         {
             _xuanxiangRepository = xuanxiangRepository;
             _daanRepository = daanRepository;
             _renyuanRepository = renyuanRepository;
+            _tikuRepository = tikuRepository;
         }
 
         public async override Task<PagedResultDto<GetListYljztDto>> GetAll(PagedSortedAndFilteredInputDto input)
@@ -65,8 +68,7 @@ namespace QC.MF.Yljzts
 
             var timuIds =
                 (
-                    from m in result.Items
-                    orderby Guid.NewGuid().ToString()
+                    from m in result.Items.OrderBy(i=> Guid.NewGuid())
                     select m.Id
                 ).Take(input.MaxResultCount)
                 .ToList();
@@ -92,6 +94,88 @@ namespace QC.MF.Yljzts
                     Neirong = xuanxiang.Neirong,
                     IsRight = xuanxiang.IsRight
                 });
+            }
+            return result;
+        }
+
+        public List<TimuRenshu> GetTimuRenshu()
+        {
+            var result = new List<TimuRenshu>();
+            var query =
+                from d in _daanRepository.GetAll()
+                join x in _xuanxiangRepository.GetAll()
+                    on d.XuanxiangId equals x.Id
+                join t in _tikuRepository.GetAll()
+                    on d.TimuId equals t.Id
+                select new { Tihao =t.TiHao, Timu=t.TiMu, IsRight = x.IsRight };
+
+            var list = query.ToList();
+
+            Dictionary<int, List<int>> tongji = new Dictionary<int, List<int>>();
+
+            foreach (var item in list)
+            {
+                if (!tongji.ContainsKey(item.Tihao))
+                {
+                    tongji.Add(item.Tihao, new List<int> { 0, 0 });
+                }
+
+                if (item.IsRight)
+                {
+                    tongji[item.Tihao][0]++;
+                }
+                tongji[item.Tihao][1]++;
+            }
+
+            foreach (var item in tongji)
+            {
+                var timu = list.FirstOrDefault(l => l.Tihao == item.Key);
+                result.Add(new TimuRenshu
+                {
+                    Tihao = item.Key,
+                    Timu = timu.Timu,
+                    Renshu = tongji[item.Key][0] 
+                });
+            }
+            return result.OrderByDescending(r => r.Renshu).Take(10).ToList();
+        }
+
+        public List<XueyuanZhengquelv> GetXueyuanZhengquelv()
+        {
+            var result = new List<XueyuanZhengquelv>();
+
+            var query =
+                 from d in _daanRepository.GetAll()
+                 join x in _xuanxiangRepository.GetAll()
+                     on d.XuanxiangId equals x.Id
+                join r in _renyuanRepository.GetAll()
+                    on d.RenyuanId equals r.Id
+                 select new { Xueyuan=r.Xueyua, IsRight = x.IsRight };
+            var list = query.ToList();
+
+            Dictionary<string, List<int>> tongji = new Dictionary<string, List<int>>();
+
+            foreach (var item in list)
+            {
+                if (!tongji.ContainsKey(item.Xueyuan))
+                {
+                    tongji.Add(item.Xueyuan, new List<int> { 0 ,0});
+                }
+
+                if (item.IsRight)
+                {
+                    tongji[item.Xueyuan][0]++;
+                }
+                tongji[item.Xueyuan][1]++;
+            }
+
+            foreach(var item in tongji)
+            {
+                result.Add(new XueyuanZhengquelv
+                {
+                    Xuyuan = item.Key,
+                    Zhengquelv = 100.0 * tongji[item.Key][0] / tongji[item.Key][1] 
+                }) ;
             }
             return result;
         }
@@ -133,6 +217,23 @@ namespace QC.MF.Yljzts
                 });
             }
             return result;
+        }
+
+        public List<XueyuanCanyu> GetXueyuanCanyu()
+        {
+            var query =
+                 from d in _daanRepository.GetAll()
+                 join x in _xuanxiangRepository.GetAll()
+                     on d.XuanxiangId equals x.Id
+                 join r in _renyuanRepository.GetAll()
+                     on d.RenyuanId equals r.Id
+                 select new { Xueyuan = r.Xueyua };
+            var list = from q in query
+                       group q by q.Xueyuan
+                        into g
+                       select new XueyuanCanyu { Xueyuan=g.Key, Renshu = g.Count()};
+
+            return list.ToList();
         }
     }
 }

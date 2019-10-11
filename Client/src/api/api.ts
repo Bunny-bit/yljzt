@@ -26,7 +26,7 @@ export const COLLECTION_FORMATS = {
     ssv: " ",
     tsv: "\t",
     pipes: "|",
-};
+}; 
 
 /**
  *
@@ -5653,6 +5653,26 @@ export interface VersionInput {
      * @memberof VersionInput
      */
     version?: string;
+}
+
+/**
+ * 
+ * @export
+ * @interface ZhengQueShuZuiGao
+ */
+export interface ZhengQueShuZuiGao {
+    /**
+     * 
+     * @type {string}
+     * @memberof ZhengQueShuZuiGao
+     */
+    xingming?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof ZhengQueShuZuiGao
+     */
+    timu?: number;
 }
 
 
@@ -19555,6 +19575,38 @@ export const YljztApiFetchParamCreator = function (configuration?: Configuration
         },
         /**
          * 
+         * @param {string} [X_XSRF_TOKEN] XSRF-TOKEN
+         * @param {string} [authorization] token
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        appYljztGetZhengQueShuZuiGao(X_XSRF_TOKEN?: string, authorization?: string, options: any = {}): FetchArgs {
+            const localVarPath = `/api/services/app/yljzt/GetZhengQueShuZuiGao`;
+            const localVarUrlObj = url.parse(localVarPath, true);
+            const localVarRequestOptions = Object.assign({ method: 'POST' }, options);
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            if (X_XSRF_TOKEN !== undefined && X_XSRF_TOKEN !== null) {
+                localVarHeaderParameter['X-XSRF-TOKEN'] = String(X_XSRF_TOKEN);
+            }
+
+            if (authorization !== undefined && authorization !== null) {
+                localVarHeaderParameter['authorization'] = String(authorization);
+            }
+
+            localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = Object.assign({}, localVarHeaderParameter, options.headers);
+
+            return {
+                url: url.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
          * @param {UpdateYljztDto} input 
          * @param {string} [X_XSRF_TOKEN] XSRF-TOKEN
          * @param {string} [authorization] token
@@ -19705,6 +19757,25 @@ export const YljztApiFp = function(configuration?: Configuration) {
         },
         /**
          * 
+         * @param {string} [X_XSRF_TOKEN] XSRF-TOKEN
+         * @param {string} [authorization] token
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        appYljztGetZhengQueShuZuiGao(X_XSRF_TOKEN?: string, authorization?: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Array<ZhengQueShuZuiGao>> {
+            const localVarFetchArgs = YljztApiFetchParamCreator(configuration).appYljztGetZhengQueShuZuiGao(X_XSRF_TOKEN, authorization, options);
+            return (fetch: FetchAPI = portableFetch, basePath: string = BASE_PATH) => {
+                return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
+                    if (response.status >= 200 && response.status < 300) {
+                        return response.json();
+                    } else {
+                        throw response;
+                    }
+                });
+            };
+        },
+        /**
+         * 
          * @param {UpdateYljztDto} input 
          * @param {string} [X_XSRF_TOKEN] XSRF-TOKEN
          * @param {string} [authorization] token
@@ -19786,6 +19857,16 @@ export const YljztApiFactory = function (configuration?: Configuration, fetch?: 
          */
         appYljztGetDajuan(input: PagedSortedAndFilteredInputDto, X_XSRF_TOKEN?: string, authorization?: string, options?: any) {
             return YljztApiFp(configuration).appYljztGetDajuan(input, X_XSRF_TOKEN, authorization, options)(fetch, basePath);
+        },
+        /**
+         * 
+         * @param {string} [X_XSRF_TOKEN] XSRF-TOKEN
+         * @param {string} [authorization] token
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        appYljztGetZhengQueShuZuiGao(X_XSRF_TOKEN?: string, authorization?: string, options?: any) {
+            return YljztApiFp(configuration).appYljztGetZhengQueShuZuiGao(X_XSRF_TOKEN, authorization, options)(fetch, basePath);
         },
         /**
          * 
@@ -19871,6 +19952,18 @@ export class YljztApi extends BaseAPI {
      */
     public appYljztGetDajuan(input: PagedSortedAndFilteredInputDto, X_XSRF_TOKEN?: string, authorization?: string, options?: any) {
         return YljztApiFp(this.configuration).appYljztGetDajuan(input, X_XSRF_TOKEN, authorization, options)(this.fetch, this.basePath);
+    }
+
+    /**
+     * 
+     * @param {string} [X_XSRF_TOKEN] XSRF-TOKEN
+     * @param {string} [authorization] token
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof YljztApi
+     */
+    public appYljztGetZhengQueShuZuiGao(X_XSRF_TOKEN?: string, authorization?: string, options?: any) {
+        return YljztApiFp(this.configuration).appYljztGetZhengQueShuZuiGao(X_XSRF_TOKEN, authorization, options)(this.fetch, this.basePath);
     }
 
     /**

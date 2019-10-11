@@ -16,5 +16,13 @@ namespace QC.MF.Yljzts
         Task<PagedResultDto<GetListYljztDto>> GetDajuan(PagedSortedAndFilteredInputDto input);
 
         List<ZhengQueShuZuiGao> GetZhengQueShuZuiGao();
+
+
+        List<XueyuanZhengquelv> GetXueyuanZhengquelv();
+
+
+        List<TimuRenshu> GetTimuRenshu();
+
+        List<XueyuanCanyu> GetXueyuanCanyu();
     }
 }

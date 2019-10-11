@@ -2,14 +2,14 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'dva';
 import { Form, Icon, Input, Button, Checkbox, message, Row, Col } from 'antd';
 import { ListView } from 'antd-mobile';
-import { List, Radio, Flex, WhiteSpace } from 'antd-mobile';
+import { List, Radio, Flex, Picker } from 'antd-mobile';
 import 'antd-mobile/dist/antd-mobile.css';
 const FormItem = Form.Item;
 const create = Form.create;
 const RadioItem = Radio.RadioItem;
 import styles from './Renyuas.css';
 
-function Renyuas({ dispatch, form, isLoading, timus, answers }) {
+function Renyuas({ dispatch, form, isLoading, timus, answers,xueyuan }) {
 
     const { getFieldDecorator } = form;
 
@@ -18,7 +18,7 @@ function Renyuas({ dispatch, form, isLoading, timus, answers }) {
         form.validateFields((err, values) => {
             let data = {
                 "name": values.name,
-                "xueyua": values.xueyua,
+                "xueyua": values.xueyua.length?values.xueyua[0]:"",
                 "xuehao": values.xuehao,
                 "banji": values.banji
             };
@@ -72,7 +72,7 @@ function Renyuas({ dispatch, form, isLoading, timus, answers }) {
                                         });
                                         console.log(answers);
                                     }}>
-                                    <div style={{width:"80%"}}>{v.name + ". " + v.neirong}</div>
+                                    <div style={{ width: "80%" }}>{v.name + " " + v.neirong}</div>
                                 </RadioItem>
                             )
                         })}
@@ -87,8 +87,14 @@ function Renyuas({ dispatch, form, isLoading, timus, answers }) {
 
     const separator = (sectionID, rowID) => (
         <div
-            key={`${sectionID}-${rowID}`}
-        />
+        key={`${sectionID}-${rowID}`}
+        style={{
+          backgroundColor: '#7d1523',
+          height: 8,
+          borderTop: '1px solid #ECECED',
+          borderBottom: '1px solid #ECECED',
+        }}
+      />
     );
 
     return (
@@ -106,7 +112,7 @@ function Renyuas({ dispatch, form, isLoading, timus, answers }) {
                                 className="am-list"
                                 pageSize={4}
                                 scrollRenderAheadDistance={500}
-                                style={{ height: 247 * timus.length + "px" }}
+                                style={{ height: 180 * timus.length + "px" }}
                             />
 
                             <Form onSubmit={handleSubmit}>
@@ -142,8 +148,15 @@ function Renyuas({ dispatch, form, isLoading, timus, answers }) {
                                     {getFieldDecorator('xueyua', {
                                         rules: [{ required: true, message: '请输入学院！' }]
                                     })(
-                                        <Input className={styles.names}
-                                        />
+                                        <Picker
+                                            data={xueyuan}
+                                            title="选择二级学院或教学部门"
+                                            // value={this.state.sValue}
+                                            // onChange={v => this.setState({ sValue: v })}
+                                            // onOk={v => this.setState({ sValue: v })}
+                                        >
+                                            <List.Item arrow="horizontal">请选择</List.Item>
+                                        </Picker>
                                     )}
                                 </FormItem>
 
