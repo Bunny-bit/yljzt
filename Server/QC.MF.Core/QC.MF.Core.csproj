@@ -213,6 +213,7 @@
     <Compile Include="Commons\ICanDelete.cs" />
     <Compile Include="Commons\ICheckDelete.cs" />
     <Compile Include="Commons\TextAttribute.cs" />
+    <Compile Include="Daans\Daan.cs" />
     <Compile Include="Demos\Demo.cs" />
     <Compile Include="Demos\GetSetDemo.cs" />
     <Compile Include="Demos\Location.cs" />
@@ -272,6 +273,7 @@
     <Compile Include="Authorization\Users\User.cs" />
     <Compile Include="Authorization\Users\UserManager.cs" />
     <Compile Include="Authorization\Users\UserStore.cs" />
+    <Compile Include="Renyua\Renyua1.cs" />
     <Compile Include="Renyuan\Renyuan1.cs" />
     <Compile Include="Security\PasswordComplexityChecker.cs" />
     <Compile Include="Security\PasswordComplexitySetting.cs" />
@@ -285,6 +287,8 @@
     <Compile Include="Storage\DbBinaryObjectManager.cs" />
     <Compile Include="Storage\IBinaryObjectManager.cs" />
     <Compile Include="StringExtensions.cs" />
+    <Compile Include="Xuanxiangs\Xuanxiang.cs" />
+    <Compile Include="Yljzts\Tiku.cs" />
     <Compile Include="Timing\ITimeZoneService.cs" />
     <Compile Include="Timing\TimeZoneService.cs" />
     <Compile Include="Validation\ValidationHelper.cs" />
@@ -294,6 +298,7 @@
     <Compile Include="WebFiles\WebFileManager.cs" />
     <Compile Include="Web\IWebUrlService.cs" />
     <Compile Include="Web\WebUrlService.cs" />
+    <Compile Include="Xueyuan\Xueyuan.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config">

@@ -76,3 +76,4 @@ app.router(require('./router.js'));
 
 // 5. Start
 app.start('#root');
+app.start('#root');

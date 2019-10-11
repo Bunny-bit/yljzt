@@ -38,6 +38,13 @@ import GetsetDemo from './routes/GetsetDemo/GetsetDemo';
 import UserCRUDDemo from './routes/UserCRUDDemo/User';
 import AppEdition from './routes/AppEdition/AppEdition';
 import AppStartPage from './routes/AppStartPage/AppStartPage';
+import Luruyljzt from './routes/yljzt/Luruyljzt';
+import Yljzt from './routes/yljzt/Yljzt';
+import Xueyuan from './routes/Xueyuan/Xueyuan';
+import LuruXueyuan from './routes/Xueyuan/LuruXueyuan';
+import Renyua from './routes/Renyua/Renyua';
+import Bingtu from './routes/Renyua/bingtu/bingtu';
+import Renyuas from './routes/Renyua/Renyuas';
 import Renyuan from './routes/Renyuan/Renyuan';
 import LuruRenyuan from './routes/Renyuan/LuruRenyuan';
 import Datitu from './routes/Renyuan/Datitu';
@@ -49,7 +56,7 @@ import Datitu from './routes/Renyuan/Datitu';
  */
 export default function RouterConfig({ history }) {
 	return (
-		<LocaleProvider locale={zhCN}>
+		<LocaleProvider locale={zhCN}>	
 			<Router history={history}>
 				<Route path="/" component={IndexPage} />
 				<Route path="/register" component={Register} />
@@ -90,9 +97,18 @@ export default function RouterConfig({ history }) {
 					<Route path="/userCRUDDemo" component={UserCRUDDemo} />
 					<Route path="/appEdition" component={AppEdition} />
 					<Route path="/appStartPage" component={AppStartPage} />
+					<Route path="/yljzt" component={Yljzt} />
+					<Route path="/xueyuan" component={Xueyuan} />
+					<Route path="/renyua" component={Renyua} />
+					<Route path="/bingtu" component={Bingtu} />
 					<Route path="/renyuan" component={Renyuan} />
 					
 				</Route>
+			
+				<Route path="/luruyljzt" component={Luruyljzt} />
+
+				<Route path="/luruxueyuan" component={LuruXueyuan} />
+				<Route path="/renyuas" component={Renyuas} />
 			    <Route path="/lururenyuan" component={LuruRenyuan} />
 				<Route path="/datitu" component={Datitu} />
 			</Router>

@@ -326,6 +326,10 @@
     <Compile Include="AppStartPages\Dto\GetListAppStartPageDto.cs" />
     <Compile Include="AppStartPages\Dto\UpdateAppStartPageDto.cs" />
     <Compile Include="AppStartPages\IAppStartPageAppService.cs" />
+    <Compile Include="Daans\DaanAppService.cs" />
+    <Compile Include="Daans\Dto\AnswerInput.cs" />
+    <Compile Include="Daans\Dto\AnswerOutput.cs" />
+    <Compile Include="Daans\IDaanAppService.cs" />
     <Compile Include="DragVerifications\DragVerificationAppService.cs" />
     <Compile Include="DragVerifications\Dto\CheckCodeInput.cs" />
     <Compile Include="DragVerifications\Dto\CheckCodeOutput.cs" />
@@ -406,6 +410,12 @@
     <Compile Include="Demos\DemoAppService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="AsyncMFCrudAppService.cs" />
+    <Compile Include="Renyuad\Dto\CreateRenyuaDto.cs" />
+    <Compile Include="Renyuad\Dto\GetListRenyuaDto.cs" />
+    <Compile Include="Renyuad\Dto\GetRenyuaDto.cs" />
+    <Compile Include="Renyuad\Dto\UpdateRenyuaDto.cs" />
+    <Compile Include="Renyuad\IRenyuaAppService.cs" />
+    <Compile Include="Renyuad\RenyuaAppService.cs" />
     <Compile Include="renyuan\Dto\CreateRenyuanDto.cs" />
     <Compile Include="renyuan\Dto\GetListRenyuanDto.cs" />
     <Compile Include="renyuan\Dto\GetRenyuanDto.cs" />
@@ -458,6 +468,25 @@
     <Compile Include="Users\Profile\ProfileAppService.cs" />
     <Compile Include="Users\UserAppService.cs" />
     <Compile Include="Users\UserLoginAppService.cs" />
+    <Compile Include="Xuanxiangs\Dto\CreateXuanxiangDto.cs" />
+    <Compile Include="Xuanxiangs\Dto\GetListXuanxiangDto.cs" />
+    <Compile Include="Xuanxiangs\Dto\GetXuanxiangDto.cs" />
+    <Compile Include="Xuanxiangs\Dto\UpdateXuanxiangDto.cs" />
+    <Compile Include="Xuanxiangs\IXuanxiangAppService.cs" />
+    <Compile Include="Xuanxiangs\XuanxiangAppService.cs" />
+    <Compile Include="Yljzts\Dto\ZhengQueShuZuiGao.cs" />
+    <Compile Include="Yljzts\Dto\CreateYljztDto.cs" />
+    <Compile Include="Yljzts\Dto\GetListYljztDto.cs" />
+    <Compile Include="Yljzts\Dto\GetYljztDto.cs" />
+    <Compile Include="Yljzts\Dto\UpdateYljztDto.cs" />
+    <Compile Include="Yljzts\IYljztAppService.cs" />
+    <Compile Include="Yljzts\YljztAppService.cs" />
+    <Compile Include="Xueyuans\Dto\CreatexueyuanDto.cs" />
+    <Compile Include="Xueyuans\Dto\GetListxueyuanDto.cs" />
+    <Compile Include="Xueyuans\Dto\GetxueyuanDto.cs" />
+    <Compile Include="Xueyuans\Dto\UpdatexueyuanDto.cs" />
+    <Compile Include="Xueyuans\IXueyuanAppService.cs" />
+    <Compile Include="Xueyuans\XueyuanAppService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

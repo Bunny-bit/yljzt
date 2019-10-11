@@ -26,6 +26,10 @@ import getSet from './getSet';
 import crud from './crud';
 import serverImageBrowse from './serverImageBrowse';
 import appEdition from './appEdition';
+import xueyuan from './xueyuan';
+import renyua from './renyua';
+import yljzt from './yljzt';
+import bingtu from './bingtu';
 import renyuan from './renyuan';
 import datitu from './datitu';
 /**
@@ -62,6 +66,10 @@ export function registerModels(app) {
 	app.model(crud);
 	app.model(serverImageBrowse);
 	app.model(appEdition);
+	app.model(yljzt);
+	app.model(xueyuan);
+	app.model(renyua);
+	app.model(bingtu);
 	app.model(renyuan);
 	app.model(datitu);
 }
