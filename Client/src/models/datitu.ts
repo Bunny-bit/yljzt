@@ -5,49 +5,11 @@ import { createApiAuthParam } from './../api/apiUtil.js';
 export default {
     namespace: 'datitu',
     state: {
-        data: [{
-            xingming: '张三',
-            timu: 38
-        }, {
-            xingming: '李四',
-            timu: 318
-        }, {
-            xingming: '王二',
-            timu: 138
-        }],
-        value: [{
-            xueyuan: '互联网',
-            zhengquelv: 38,
-            zanbi:0.38
-        }, {
-            xueyuan: '酒店',
-            zhengquelv: 22,
-            zanbi:0.22
-        }, {
-            xueyuan: '经管',
-            zhengquelv: 40,
-            zanbi:0.40
-        }],
-        shuju: [{
-            timu: '第一题',
-            daduirengshu: 58
-        }, {
-            timu: '第二题',
-            daduirengshu: 22
-        }, {
-            timu: '第三题',
-            daduirengshu: 40
-        }],
-        cyrs: [{
-            xueyuan: '互联网',
-            canyurengshu: 58
-        }, {
-            xueyuan: '酒店',
-            canyurengshu: 38
-        }, {
-            xueyuan: '经管',
-            canyurengshu: 48
-        }],
+        zhengQueShuZuiGao: [],
+        canyuzhanbi: [],
+        timuDaduiRenshu: [],
+        canyu: [],
+        zhengque:[],
         forceFit: true,
         width: 500,
         height: 450,
@@ -64,20 +26,109 @@ export default {
         }
     },
     effects: {
-        *getUserLogins({ payload }, { call, put }) {
+        *getZhengQueShuZuiGao({ payload }, { call, put }) {
             const { success, result } = yield call(...createApiAuthParam({
-                method: new api.RoleApi().appRoleGetRoles,//接入数据
-                payload: payload
+                method: new api.YljztApi().appYljztGetZhengQueShuZuiGao,
+                payload: { payload }
             }));
             if (success) {
                 yield put({
                     type: 'setState',
                     payload: {
-                        data: result.items,
+                        zhengQueShuZuiGao: result,
                     }
                 });
             }
         },
+        *getTimuRenshu({ payload }, { call, put }) {
+            const { success, result } = yield call(...createApiAuthParam({
+                method: new api.YljztApi().appYljztGetTimuRenshu,
+                payload: { payload }
+            }));
+            if (success) {
+                yield put({
+                    type: 'setState',
+                    payload: {
+                        timuDaduiRenshu: result,
+                    }
+                });
+            }
+        },
+        *getXueyuanCanyu({ payload }, { call, put }) {
+            const { success, result } = yield call(...createApiAuthParam({
+                method: new api.YljztApi().appYljztGetXueyuanCanyu,
+                payload: { payload }
+            }));
+            if (success) {
+                yield put({
+                    type: 'setState',
+                    payload: {
+                        canyu: result,
+                    }
+                });
+            }
+        },
+        *getXueyuanCanyuZhanbi({ payload }, { call, put }) {
+            const { success, result } = yield call(...createApiAuthParam({
+                method: new api.YljztApi().appYljztGetXueyuanCanyu,
+                payload: { payload }
+            }));
+            var total = 0;
+            for (var i in result) {
+                total += result[i].renshu;
+            }
+            for (var i in result) {
+                if (total == 0) {
+                    result[i].zhanbi = 0
+                } else {
+                    result[i].zhanbi = result[i].renshu / total;
+                }
+            }
+            if (success) {
+                yield put({
+                    type: 'setState',
+                    payload: {
+                        canyuzhanbi: result,
+                    }
+                });
+            }
+        },
+        *getXueyuanZhengquelv({ payload }, { call, put }) {
+            const { success, result } = yield call(...createApiAuthParam({
+                method: new api.YljztApi().appYljztGetXueyuanZhengquelv,
+                payload: { payload }
+            }));
+            if (success) {
+                yield put({
+                    type: 'setState',
+                    payload: {
+                        zhengque: result,
+                    }
+                });
+            }
+        }
     },
-    subscriptions: {},
+    subscriptions: {
+        setup({ dispatch, history }) {
+            return history.listen(({ pathname, state }) => {
+                if (pathname.toLowerCase() == '/datitu'.toLowerCase()) {
+                    dispatch({
+                        type: 'getZhengQueShuZuiGao'
+                    });
+                    dispatch({
+                        type: 'getTimuRenshu'
+                    });
+                    dispatch({
+                        type: 'getXueyuanCanyu'
+                    });
+                    dispatch({
+                        type: 'getXueyuanCanyuZhanbi'
+                    });
+                    dispatch({
+                        type: 'getXueyuanZhengquelv'
+                    });
+                }
+            });
+        }
+    },
 };

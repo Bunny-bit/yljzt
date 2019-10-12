@@ -58,7 +58,7 @@ function Renyuas({ dispatch, form, isLoading, timus, answers,xueyuan }) {
         const obj = timus[rowID];
         return (
             <div key={rowID} style={{ padding: '0 15px' }}>
-                <div style={{ lineHeight: 1 }}>
+                <div style={{ lineHeight: 1.5 }}>
                     <List renderHeader={() => (<div className={styles.titles} style={{ fontSize: "20px" }}>{obj.title}</div>)}>
                         {obj.answers.map(v => {
                             return (
@@ -72,7 +72,7 @@ function Renyuas({ dispatch, form, isLoading, timus, answers,xueyuan }) {
                                         });
                                         console.log(answers);
                                     }}>
-                                    <div style={{ width: "80%" }}>{v.name + " " + v.neirong}</div>
+                                    <span style={{ width: "80%", display:"inline-block",whiteSpace:"normal" }}>{v.name + " " + v.neirong}</span>
                                 </RadioItem>
                             )
                         })}
