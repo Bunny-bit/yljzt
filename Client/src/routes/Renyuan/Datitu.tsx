@@ -88,8 +88,8 @@ class Datitu extends React.Component {
     const { zhengQueShuZuiGao, canyuzhanbi, timuDaduiRenshu, zhengque, width, height, plotCfg, forceFit } = this.props;
     return (
       <div>
-        <Row>
-          <Col xl={11} lg={24} style={{ background: '#fff', marginTop: 20 }}>
+        <Row >
+          <Col xl={12} lg={24} style={{ background: '#fff' }}>
             {
               zhengQueShuZuiGao && zhengQueShuZuiGao.length
                 ? <Chart
@@ -101,7 +101,7 @@ class Datitu extends React.Component {
                 : null
             }
           </Col>
-          <Col xl={{ span: 11, offset: 1 }} lg={24} style={{ background: '#fff', marginTop: 20 }}>
+          <Col xl={{ span: 12}} lg={24} style={{ background: '#fff'}}>
             {
               canyuzhanbi && canyuzhanbi.length ? <Chart1
                 data={canyuzhanbi}
@@ -111,7 +111,7 @@ class Datitu extends React.Component {
                 forceFit={forceFit} />
                 : null
             }</Col>
-          <Col xl={11} lg={24} style={{ background: '#fff', marginTop: 20 }}>
+          <Col xl={12} lg={24} style={{ background: '#fff' }}>
             {
               timuDaduiRenshu && timuDaduiRenshu.length ?
                 <Chart2
@@ -123,7 +123,7 @@ class Datitu extends React.Component {
                 : null
             }
           </Col>
-          <Col xl={11} lg={24} style={{ background: '#fff', marginTop: 20 }}>
+          <Col xl={12} lg={24} style={{ background: '#fff'}}>
             {zhengque && zhengque.length ? <Chart3
               data={zhengque}
               width={width}
