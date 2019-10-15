@@ -1,4 +1,5 @@
 import { notification } from 'antd';
+import { routerRedux } from 'dva/router';
 import * as api from './../api/api';
 import { createApiAuthParam } from './../api/apiUtil.js';
 export default {
@@ -71,10 +72,11 @@ export default {
 				})
 			);
 			if (data.success) {
-				notification.success({
-					message: '保存成功',
-					description: '恭喜你保存成功'
-				});
+				yield put(routerRedux.push('/tankuang'));
+				// notification.success({
+				// 	message: '保存成功',
+				// 	description: '恭喜你保存成功'
+				// });
 			}
 		},
 		*getTimus({ payload }, { call, put }) {

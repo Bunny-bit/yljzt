@@ -1,0 +1,12 @@
+.boxss {
+    width: 100%;
+    min-height: 100%;
+    overflow: hidden;
+    background: #7d1523;
+}
+
+.titless {
+    width: 300px;
+    margin: 0 auto;
+    top: 230px;
+} 

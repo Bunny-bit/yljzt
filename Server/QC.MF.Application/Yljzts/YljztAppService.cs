@@ -63,15 +63,20 @@ namespace QC.MF.Yljzts
 
         public async Task<PagedResultDto<GetListYljztDto>> GetDajuan(PagedSortedAndFilteredInputDto input)
         {
+            var maxResultCount = input.MaxResultCount;
+            input.MaxResultCount = int.MaxValue;
+           var result = await base.GetAll(input);
 
-            var result = await base.GetAll(input);
+            var timuIds = result.Items.Select(i => i.Id).ToList();
 
-            var timuIds =
-                (
-                    from m in result.Items.OrderBy(i=> Guid.NewGuid())
-                    select m.Id
-                ).Take(input.MaxResultCount)
-                .ToList();
+            for (var i = 0; i < timuIds.Count; i++)
+            {
+                var index = new Random().Next(timuIds.Count);
+                var temp = timuIds[i];
+                timuIds[i] = timuIds[index];
+                timuIds[index] = temp;
+            }
+            timuIds = timuIds.OrderByDescending(i=>Guid.NewGuid()).Take(maxResultCount).ToList();
 
             var xuanxiangs = _xuanxiangRepository.GetAll()
                 .Where(r => timuIds.Contains(r.TimuId))
@@ -79,6 +84,7 @@ namespace QC.MF.Yljzts
 
             xuanxiangs.Sort((l, r) => l.Name.CompareTo(r.Name));
             var tihao = 1;
+            result.Items = result.Items.Where(i => timuIds.Contains(i.Id)).ToList();
             foreach (var timu in result.Items)
             {
                 timu.TiHao = tihao++;

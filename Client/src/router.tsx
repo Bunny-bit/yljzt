@@ -45,6 +45,7 @@ import LuruXueyuan from './routes/Xueyuan/LuruXueyuan';
 import Renyua from './routes/Renyua/Renyua';
 import Bingtu from './routes/Renyua/bingtu/bingtu';
 import Renyuas from './routes/Renyua/Renyuas';
+import Tankuang from './routes/Renyua/Tankuang';
 import Renyuan from './routes/Renyuan/Renyuan';
 import LuruRenyuan from './routes/Renyuan/LuruRenyuan';
 import Datitu from './routes/Renyuan/Datitu';
@@ -109,6 +110,8 @@ export default function RouterConfig({ history }) {
 
 				<Route path="/luruxueyuan" component={LuruXueyuan} />
 				<Route path="/renyuas" component={Renyuas} />
+				<Route path="/tankuang" component={Tankuang} />
+			
 			    <Route path="/lururenyuan" component={LuruRenyuan} />
 				<Route path="/datitu" component={Datitu} />
 			</Router>
