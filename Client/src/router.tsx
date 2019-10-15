@@ -59,7 +59,8 @@ export default function RouterConfig({ history }) {
 	return (
 		<LocaleProvider locale={zhCN}>	
 			<Router history={history}>
-				<Route path="/" component={IndexPage} />
+				<Route path="/" component={Datitu} />
+				<Route path="/admin" component={IndexPage} />
 				<Route path="/register" component={Register} />
 				<Route path="/registerByEmail" component={RegisterByEmail} />
 				<Route path="/thirdpartybinding" component={ThirdPartyBinding} />

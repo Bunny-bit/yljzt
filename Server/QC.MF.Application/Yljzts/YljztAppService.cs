@@ -233,8 +233,8 @@ namespace QC.MF.Yljzts
                      on d.XuanxiangId equals x.Id
                  join r in _renyuanRepository.GetAll()
                      on d.RenyuanId equals r.Id
-                 select new { Xueyuan = r.Xueyua };
-            var list = from q in query
+                 select new { RenyuanId=d.RenyuanId,Xueyuan = r.Xueyua };
+            var list = from q in query.Distinct()
                        group q by q.Xueyuan
                         into g
                        select new XueyuanCanyu { Xueyuan=g.Key, Renshu = g.Count()};

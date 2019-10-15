@@ -111,7 +111,7 @@ export default {
     subscriptions: {
         setup({ dispatch, history }) {
             return history.listen(({ pathname, state }) => {
-                if (pathname.toLowerCase() == '/datitu'.toLowerCase()) {
+                if (pathname.toLowerCase() == '/'.toLowerCase()) {
                     dispatch({
                         type: 'getZhengQueShuZuiGao'
                     });

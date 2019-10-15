@@ -29,29 +29,22 @@ const Chart1 = createG2(chart => {
   chart.source(chart.data, {
     zhengquelv: {
       formatter: function formatter(val) {
-        val = val * 100 + '%';
         return val;
       }
     }
   });
 
   chart.col('renshu', {
-    alias: '正确率(%)'
+    alias: '人数'
   });
   chart.col('xueyuan', {
     alias: '学院'
   });
   chart.intervalStack().position('renshu').color('xueyuan').label('xueyuan', {
     formatter: function formatter(val, xueyuan) {
-      return xueyuan.point.xueyuan + ': ' + val;
+      return xueyuan.point.xueyuan ;
     }
-  }).tooltip('xueyuan*zanbi', function (xueyuan, zanbi) {
-    zanbi = zanbi * 100 + '%';
-    return {
-      name: xueyuan,
-      value: zanbi
-    };
-  };
+  });
   chart.render();
 });
 
@@ -74,12 +67,12 @@ const Chart3 = createG2(chart => {
   chart.setMode('select'); // 开启框选模式
   chart.select('rangeX'); // 设置 X 轴范围的框选
   chart.col('zhengquelv', {
-    alias: '正确率'
+    alias: '正确率（%）'
   });
-  chart.col('xueyuan', {
+  chart.col('xuyuan', {
     alias: '学院'
   });
-  chart.interval().position('xueyuan*zhengquelv').color('xueyuan');
+  chart.interval().position('xuyuan*zhengquelv').color('xuyuan');
   chart.render();
 });
 
