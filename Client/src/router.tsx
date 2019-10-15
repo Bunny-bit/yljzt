@@ -45,6 +45,7 @@ import LuruXueyuan from './routes/Xueyuan/LuruXueyuan';
 import Renyua from './routes/Renyua/Renyua';
 import Bingtu from './routes/Renyua/bingtu/bingtu';
 import Renyuas from './routes/Renyua/Renyuas';
+import Tankuang from './routes/Renyua/Tankuang';
 /**
  * router.js
  * Created by 李廷旭 on 2017/9/5 12:39
@@ -103,6 +104,8 @@ export default function RouterConfig({ history }) {
 
 				<Route path="/luruxueyuan" component={LuruXueyuan} />
 				<Route path="/renyuas" component={Renyuas} />
+				<Route path="/tankuang" component={Tankuang} />
+			
 			</Router>
 		</LocaleProvider>
 	);

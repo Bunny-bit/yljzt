@@ -1,4 +1,5 @@
 import { notification } from 'antd';
+import { routerRedux } from 'dva/router';
 import * as api from './../api/api';
 import { createApiAuthParam } from './../api/apiUtil.js';
 export default {
@@ -34,6 +35,7 @@ export default {
 				})
 			);
 			if (data.success) {
+				yield put(routerRedux.push('/renyua/Tankuang'));
 				notification.success({
 					message: '保存成功',
 					description: '恭喜你保存成功'
