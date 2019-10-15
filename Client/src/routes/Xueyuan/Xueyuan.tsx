@@ -17,7 +17,7 @@ function Xueyuan({ form, record }) {
 			title: '名称',
 			dataIndex: 'name',
 			sorter: true
-		},
+		}];
 	const { getFieldDecorator } = form;
 	const formCol = {
 		labelCol: { span: 8 },
@@ -28,10 +28,10 @@ function Xueyuan({ form, record }) {
 			<FormItem label="名称" {...formCol}>
 				{getFieldDecorator('name', {
 					initialValue: record.name,
-					rules: [ { required: true, message: '请填写名称' } ]
+					rules: [{ required: true, message: '请填写名称' }]
 				})(<Input />)}
 			</FormItem>
-		
+
 		</Form>
 	);
 	const filters = [
@@ -40,7 +40,7 @@ function Xueyuan({ form, record }) {
 			displayName: '名称',
 			option: 'like'
 		},
-		
+
 	];
 
 	return (

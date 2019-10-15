@@ -33,7 +33,7 @@ namespace QC.MF
         /// <param name="body">请求参数</param>
         /// <param name="timeout">请求超时时间</param>
         /// <returns>返回请求结果</returns>
-        public static string Request(string url, RequestOptions options, string body = "", int timeout = 6000)
+        public static string Request(string url, RequestOptions options, string body = "", int timeout = 60000)
         {
             string readStr = string.Empty;
             HttpWebRequest http = (HttpWebRequest)WebRequest.Create(url);

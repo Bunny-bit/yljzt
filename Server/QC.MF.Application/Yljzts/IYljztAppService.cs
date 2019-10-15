@@ -1,4 +1,5 @@
 ﻿using Abp.Application.Services;
+using Abp.Application.Services.Dto;
 using QC.MF.CommonDto;
 using QC.MF.Demos.Dto;
 using QC.MF.Yljzts.Dto;
@@ -12,5 +13,16 @@ namespace QC.MF.Yljzts
 {
     public interface IYljztAppService:IAsyncCrudAppService<GetListYljztDto, int, PagedSortedAndFilteredInputDto, CreateYljztDto, UpdateYljztDto>
     {
+        Task<PagedResultDto<GetListYljztDto>> GetDajuan(PagedSortedAndFilteredInputDto input);
+
+        List<ZhengQueShuZuiGao> GetZhengQueShuZuiGao();
+
+
+        List<XueyuanZhengquelv> GetXueyuanZhengquelv();
+
+
+        List<TimuRenshu> GetTimuRenshu();
+
+        List<XueyuanCanyu> GetXueyuanCanyu();
     }
 }

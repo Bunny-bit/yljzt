@@ -25,11 +25,6 @@ export const COLLECTION_FORMATS = {
     csv: ",",
     ssv: " ",
     tsv: "\t",
- */
-export const COLLECTION_FORMATS = {
-    csv: ",",
-    ssv: " ",
-    tsv: "\t",
     pipes: "|",
 };
 
@@ -4573,6 +4568,32 @@ export namespace ThirdPartyLoginModel {
 /**
  * 
  * @export
+ * @interface TimuRenshu
+ */
+export interface TimuRenshu {
+    /**
+     * 
+     * @type {number}
+     * @memberof TimuRenshu
+     */
+    tihao?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof TimuRenshu
+     */
+    timu?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof TimuRenshu
+     */
+    renshu?: number;
+}
+
+/**
+ * 
+ * @export
  * @interface UnblockUserInput
  */
 export interface UnblockUserInput {
@@ -5658,6 +5679,66 @@ export interface VersionInput {
      * @memberof VersionInput
      */
     version?: string;
+}
+
+/**
+ * 
+ * @export
+ * @interface XueyuanCanyu
+ */
+export interface XueyuanCanyu {
+    /**
+     * 
+     * @type {string}
+     * @memberof XueyuanCanyu
+     */
+    xueyuan?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof XueyuanCanyu
+     */
+    renshu?: number;
+}
+
+/**
+ * 
+ * @export
+ * @interface XueyuanZhengquelv
+ */
+export interface XueyuanZhengquelv {
+    /**
+     * 
+     * @type {string}
+     * @memberof XueyuanZhengquelv
+     */
+    xuyuan?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof XueyuanZhengquelv
+     */
+    zhengquelv?: number;
+}
+
+/**
+ * 
+ * @export
+ * @interface ZhengQueShuZuiGao
+ */
+export interface ZhengQueShuZuiGao {
+    /**
+     * 
+     * @type {string}
+     * @memberof ZhengQueShuZuiGao
+     */
+    xingming?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof ZhengQueShuZuiGao
+     */
+    timu?: number;
 }
 
 
@@ -19519,6 +19600,175 @@ export const YljztApiFetchParamCreator = function (configuration?: Configuration
         },
         /**
          * 
+         * @param {PagedSortedAndFilteredInputDto} input 
+         * @param {string} [X_XSRF_TOKEN] XSRF-TOKEN
+         * @param {string} [authorization] token
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        appYljztGetDajuan(input: PagedSortedAndFilteredInputDto, X_XSRF_TOKEN?: string, authorization?: string, options: any = {}): FetchArgs {
+            // verify required parameter 'input' is not null or undefined
+            if (input === null || input === undefined) {
+                throw new RequiredError('input','Required parameter input was null or undefined when calling appYljztGetDajuan.');
+            }
+            const localVarPath = `/api/services/app/yljzt/GetDajuan`;
+            const localVarUrlObj = url.parse(localVarPath, true);
+            const localVarRequestOptions = Object.assign({ method: 'POST' }, options);
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            if (X_XSRF_TOKEN !== undefined && X_XSRF_TOKEN !== null) {
+                localVarHeaderParameter['X-XSRF-TOKEN'] = String(X_XSRF_TOKEN);
+            }
+
+            if (authorization !== undefined && authorization !== null) {
+                localVarHeaderParameter['authorization'] = String(authorization);
+            }
+
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = Object.assign({}, localVarHeaderParameter, options.headers);
+            const needsSerialization = (<any>"PagedSortedAndFilteredInputDto" !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
+            localVarRequestOptions.body =  needsSerialization ? JSON.stringify(input || {}) : (input || "");
+
+            return {
+                url: url.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @param {string} [X_XSRF_TOKEN] XSRF-TOKEN
+         * @param {string} [authorization] token
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        appYljztGetTimuRenshu(X_XSRF_TOKEN?: string, authorization?: string, options: any = {}): FetchArgs {
+            const localVarPath = `/api/services/app/yljzt/GetTimuRenshu`;
+            const localVarUrlObj = url.parse(localVarPath, true);
+            const localVarRequestOptions = Object.assign({ method: 'POST' }, options);
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            if (X_XSRF_TOKEN !== undefined && X_XSRF_TOKEN !== null) {
+                localVarHeaderParameter['X-XSRF-TOKEN'] = String(X_XSRF_TOKEN);
+            }
+
+            if (authorization !== undefined && authorization !== null) {
+                localVarHeaderParameter['authorization'] = String(authorization);
+            }
+
+            localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = Object.assign({}, localVarHeaderParameter, options.headers);
+
+            return {
+                url: url.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @param {string} [X_XSRF_TOKEN] XSRF-TOKEN
+         * @param {string} [authorization] token
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        appYljztGetXueyuanCanyu(X_XSRF_TOKEN?: string, authorization?: string, options: any = {}): FetchArgs {
+            const localVarPath = `/api/services/app/yljzt/GetXueyuanCanyu`;
+            const localVarUrlObj = url.parse(localVarPath, true);
+            const localVarRequestOptions = Object.assign({ method: 'POST' }, options);
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            if (X_XSRF_TOKEN !== undefined && X_XSRF_TOKEN !== null) {
+                localVarHeaderParameter['X-XSRF-TOKEN'] = String(X_XSRF_TOKEN);
+            }
+
+            if (authorization !== undefined && authorization !== null) {
+                localVarHeaderParameter['authorization'] = String(authorization);
+            }
+
+            localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = Object.assign({}, localVarHeaderParameter, options.headers);
+
+            return {
+                url: url.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @param {string} [X_XSRF_TOKEN] XSRF-TOKEN
+         * @param {string} [authorization] token
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        appYljztGetXueyuanZhengquelv(X_XSRF_TOKEN?: string, authorization?: string, options: any = {}): FetchArgs {
+            const localVarPath = `/api/services/app/yljzt/GetXueyuanZhengquelv`;
+            const localVarUrlObj = url.parse(localVarPath, true);
+            const localVarRequestOptions = Object.assign({ method: 'POST' }, options);
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            if (X_XSRF_TOKEN !== undefined && X_XSRF_TOKEN !== null) {
+                localVarHeaderParameter['X-XSRF-TOKEN'] = String(X_XSRF_TOKEN);
+            }
+
+            if (authorization !== undefined && authorization !== null) {
+                localVarHeaderParameter['authorization'] = String(authorization);
+            }
+
+            localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = Object.assign({}, localVarHeaderParameter, options.headers);
+
+            return {
+                url: url.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @param {string} [X_XSRF_TOKEN] XSRF-TOKEN
+         * @param {string} [authorization] token
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        appYljztGetZhengQueShuZuiGao(X_XSRF_TOKEN?: string, authorization?: string, options: any = {}): FetchArgs {
+            const localVarPath = `/api/services/app/yljzt/GetZhengQueShuZuiGao`;
+            const localVarUrlObj = url.parse(localVarPath, true);
+            const localVarRequestOptions = Object.assign({ method: 'POST' }, options);
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            if (X_XSRF_TOKEN !== undefined && X_XSRF_TOKEN !== null) {
+                localVarHeaderParameter['X-XSRF-TOKEN'] = String(X_XSRF_TOKEN);
+            }
+
+            if (authorization !== undefined && authorization !== null) {
+                localVarHeaderParameter['authorization'] = String(authorization);
+            }
+
+            localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = Object.assign({}, localVarHeaderParameter, options.headers);
+
+            return {
+                url: url.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
          * @param {UpdateYljztDto} input 
          * @param {string} [X_XSRF_TOKEN] XSRF-TOKEN
          * @param {string} [authorization] token
@@ -19649,6 +19899,102 @@ export const YljztApiFp = function(configuration?: Configuration) {
         },
         /**
          * 
+         * @param {PagedSortedAndFilteredInputDto} input 
+         * @param {string} [X_XSRF_TOKEN] XSRF-TOKEN
+         * @param {string} [authorization] token
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        appYljztGetDajuan(input: PagedSortedAndFilteredInputDto, X_XSRF_TOKEN?: string, authorization?: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<PagedResultDtoGetListYljztDto> {
+            const localVarFetchArgs = YljztApiFetchParamCreator(configuration).appYljztGetDajuan(input, X_XSRF_TOKEN, authorization, options);
+            return (fetch: FetchAPI = portableFetch, basePath: string = BASE_PATH) => {
+                return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
+                    if (response.status >= 200 && response.status < 300) {
+                        return response.json();
+                    } else {
+                        throw response;
+                    }
+                });
+            };
+        },
+        /**
+         * 
+         * @param {string} [X_XSRF_TOKEN] XSRF-TOKEN
+         * @param {string} [authorization] token
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        appYljztGetTimuRenshu(X_XSRF_TOKEN?: string, authorization?: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Array<TimuRenshu>> {
+            const localVarFetchArgs = YljztApiFetchParamCreator(configuration).appYljztGetTimuRenshu(X_XSRF_TOKEN, authorization, options);
+            return (fetch: FetchAPI = portableFetch, basePath: string = BASE_PATH) => {
+                return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
+                    if (response.status >= 200 && response.status < 300) {
+                        return response.json();
+                    } else {
+                        throw response;
+                    }
+                });
+            };
+        },
+        /**
+         * 
+         * @param {string} [X_XSRF_TOKEN] XSRF-TOKEN
+         * @param {string} [authorization] token
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        appYljztGetXueyuanCanyu(X_XSRF_TOKEN?: string, authorization?: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Array<XueyuanCanyu>> {
+            const localVarFetchArgs = YljztApiFetchParamCreator(configuration).appYljztGetXueyuanCanyu(X_XSRF_TOKEN, authorization, options);
+            return (fetch: FetchAPI = portableFetch, basePath: string = BASE_PATH) => {
+                return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
+                    if (response.status >= 200 && response.status < 300) {
+                        return response.json();
+                    } else {
+                        throw response;
+                    }
+                });
+            };
+        },
+        /**
+         * 
+         * @param {string} [X_XSRF_TOKEN] XSRF-TOKEN
+         * @param {string} [authorization] token
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        appYljztGetXueyuanZhengquelv(X_XSRF_TOKEN?: string, authorization?: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Array<XueyuanZhengquelv>> {
+            const localVarFetchArgs = YljztApiFetchParamCreator(configuration).appYljztGetXueyuanZhengquelv(X_XSRF_TOKEN, authorization, options);
+            return (fetch: FetchAPI = portableFetch, basePath: string = BASE_PATH) => {
+                return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
+                    if (response.status >= 200 && response.status < 300) {
+                        return response.json();
+                    } else {
+                        throw response;
+                    }
+                });
+            };
+        },
+        /**
+         * 
+         * @param {string} [X_XSRF_TOKEN] XSRF-TOKEN
+         * @param {string} [authorization] token
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        appYljztGetZhengQueShuZuiGao(X_XSRF_TOKEN?: string, authorization?: string, options?: any): (fetch?: FetchAPI, basePath?: string) => Promise<Array<ZhengQueShuZuiGao>> {
+            const localVarFetchArgs = YljztApiFetchParamCreator(configuration).appYljztGetZhengQueShuZuiGao(X_XSRF_TOKEN, authorization, options);
+            return (fetch: FetchAPI = portableFetch, basePath: string = BASE_PATH) => {
+                return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
+                    if (response.status >= 200 && response.status < 300) {
+                        return response.json();
+                    } else {
+                        throw response;
+                    }
+                });
+            };
+        },
+        /**
+         * 
          * @param {UpdateYljztDto} input 
          * @param {string} [X_XSRF_TOKEN] XSRF-TOKEN
          * @param {string} [authorization] token
@@ -19722,6 +20068,57 @@ export const YljztApiFactory = function (configuration?: Configuration, fetch?: 
         },
         /**
          * 
+         * @param {PagedSortedAndFilteredInputDto} input 
+         * @param {string} [X_XSRF_TOKEN] XSRF-TOKEN
+         * @param {string} [authorization] token
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        appYljztGetDajuan(input: PagedSortedAndFilteredInputDto, X_XSRF_TOKEN?: string, authorization?: string, options?: any) {
+            return YljztApiFp(configuration).appYljztGetDajuan(input, X_XSRF_TOKEN, authorization, options)(fetch, basePath);
+        },
+        /**
+         * 
+         * @param {string} [X_XSRF_TOKEN] XSRF-TOKEN
+         * @param {string} [authorization] token
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        appYljztGetTimuRenshu(X_XSRF_TOKEN?: string, authorization?: string, options?: any) {
+            return YljztApiFp(configuration).appYljztGetTimuRenshu(X_XSRF_TOKEN, authorization, options)(fetch, basePath);
+        },
+        /**
+         * 
+         * @param {string} [X_XSRF_TOKEN] XSRF-TOKEN
+         * @param {string} [authorization] token
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        appYljztGetXueyuanCanyu(X_XSRF_TOKEN?: string, authorization?: string, options?: any) {
+            return YljztApiFp(configuration).appYljztGetXueyuanCanyu(X_XSRF_TOKEN, authorization, options)(fetch, basePath);
+        },
+        /**
+         * 
+         * @param {string} [X_XSRF_TOKEN] XSRF-TOKEN
+         * @param {string} [authorization] token
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        appYljztGetXueyuanZhengquelv(X_XSRF_TOKEN?: string, authorization?: string, options?: any) {
+            return YljztApiFp(configuration).appYljztGetXueyuanZhengquelv(X_XSRF_TOKEN, authorization, options)(fetch, basePath);
+        },
+        /**
+         * 
+         * @param {string} [X_XSRF_TOKEN] XSRF-TOKEN
+         * @param {string} [authorization] token
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        appYljztGetZhengQueShuZuiGao(X_XSRF_TOKEN?: string, authorization?: string, options?: any) {
+            return YljztApiFp(configuration).appYljztGetZhengQueShuZuiGao(X_XSRF_TOKEN, authorization, options)(fetch, basePath);
+        },
+        /**
+         * 
          * @param {UpdateYljztDto} input 
          * @param {string} [X_XSRF_TOKEN] XSRF-TOKEN
          * @param {string} [authorization] token
@@ -19791,6 +20188,67 @@ export class YljztApi extends BaseAPI {
      */
     public appYljztGetAll(input: PagedSortedAndFilteredInputDto, X_XSRF_TOKEN?: string, authorization?: string, options?: any) {
         return YljztApiFp(this.configuration).appYljztGetAll(input, X_XSRF_TOKEN, authorization, options)(this.fetch, this.basePath);
+    }
+
+    /**
+     * 
+     * @param {PagedSortedAndFilteredInputDto} input 
+     * @param {string} [X_XSRF_TOKEN] XSRF-TOKEN
+     * @param {string} [authorization] token
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof YljztApi
+     */
+    public appYljztGetDajuan(input: PagedSortedAndFilteredInputDto, X_XSRF_TOKEN?: string, authorization?: string, options?: any) {
+        return YljztApiFp(this.configuration).appYljztGetDajuan(input, X_XSRF_TOKEN, authorization, options)(this.fetch, this.basePath);
+    }
+
+    /**
+     * 
+     * @param {string} [X_XSRF_TOKEN] XSRF-TOKEN
+     * @param {string} [authorization] token
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof YljztApi
+     */
+    public appYljztGetTimuRenshu(X_XSRF_TOKEN?: string, authorization?: string, options?: any) {
+        return YljztApiFp(this.configuration).appYljztGetTimuRenshu(X_XSRF_TOKEN, authorization, options)(this.fetch, this.basePath);
+    }
+
+    /**
+     * 
+     * @param {string} [X_XSRF_TOKEN] XSRF-TOKEN
+     * @param {string} [authorization] token
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof YljztApi
+     */
+    public appYljztGetXueyuanCanyu(X_XSRF_TOKEN?: string, authorization?: string, options?: any) {
+        return YljztApiFp(this.configuration).appYljztGetXueyuanCanyu(X_XSRF_TOKEN, authorization, options)(this.fetch, this.basePath);
+    }
+
+    /**
+     * 
+     * @param {string} [X_XSRF_TOKEN] XSRF-TOKEN
+     * @param {string} [authorization] token
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof YljztApi
+     */
+    public appYljztGetXueyuanZhengquelv(X_XSRF_TOKEN?: string, authorization?: string, options?: any) {
+        return YljztApiFp(this.configuration).appYljztGetXueyuanZhengquelv(X_XSRF_TOKEN, authorization, options)(this.fetch, this.basePath);
+    }
+
+    /**
+     * 
+     * @param {string} [X_XSRF_TOKEN] XSRF-TOKEN
+     * @param {string} [authorization] token
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof YljztApi
+     */
+    public appYljztGetZhengQueShuZuiGao(X_XSRF_TOKEN?: string, authorization?: string, options?: any) {
+        return YljztApiFp(this.configuration).appYljztGetZhengQueShuZuiGao(X_XSRF_TOKEN, authorization, options)(this.fetch, this.basePath);
     }
 
     /**

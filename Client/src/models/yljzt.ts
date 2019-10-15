@@ -30,7 +30,16 @@ export default {
           type:"setState",
           payload:{visible:false}
         })
-        window.location.reload();
+        
+				yield put({
+					type:'crud/getAll',
+          payload: {
+            api: new api.YljztApi().appYljztGetAll,
+            data: {
+              clear: true
+            }
+          }
+				})
       } 
     },
     *deleteXuanxiang({ payload }, { call, put }) {
@@ -41,7 +50,15 @@ export default {
         })
       );
       if (success) {
-        window.location.reload();
+				yield put({
+          type:'crud/getAll',
+          payload: {
+            api: new api.YljztApi().appYljztGetAll,
+            data: {
+              clear: true
+            }
+          }
+				})
       } 
     },
   },

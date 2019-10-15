@@ -468,6 +468,10 @@
     <Compile Include="Xuanxiangs\Dto\UpdateXuanxiangDto.cs" />
     <Compile Include="Xuanxiangs\IXuanxiangAppService.cs" />
     <Compile Include="Xuanxiangs\XuanxiangAppService.cs" />
+    <Compile Include="Yljzts\Dto\TimuRenshu.cs" />
+    <Compile Include="Yljzts\Dto\XueyuanCanyu.cs" />
+    <Compile Include="Yljzts\Dto\XueyuanZhengquelv.cs" />
+    <Compile Include="Yljzts\Dto\ZhengQueShuZuiGao.cs" />
     <Compile Include="Yljzts\Dto\CreateYljztDto.cs" />
     <Compile Include="Yljzts\Dto\GetListYljztDto.cs" />
     <Compile Include="Yljzts\Dto\GetYljztDto.cs" />
@@ -497,7 +501,9 @@
       <Name>QC.MF.EntityFramework</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="QC\MF\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
