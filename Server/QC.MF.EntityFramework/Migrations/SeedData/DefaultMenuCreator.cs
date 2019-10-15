@@ -84,6 +84,37 @@ namespace QC.MF.Migrations.SeedData
                     IsSystem = true,
                     Url = "/auditLog",
                     RequiredPermissionName = PermissionNames.Pages_Administration_AuditLogs
+                },
+                new Menus.Menu
+                {
+                    DisplayName = "审计日志",
+                    Icon = "solution",
+                    Order = 6,
+                    IsVisible = true,
+                    Target = "_self",
+                    IsSystem = true,
+                    Url = "/auditLog",
+                    RequiredPermissionName = PermissionNames.Pages_Administration_AuditLogs
+                },
+                new Menus.Menu
+                {
+                    DisplayName = "学生",
+                    Icon = "solution",
+                    Order = 7,
+                    IsVisible = true,
+                    Target = "_self",
+                    IsSystem = true,
+                    Url = "/renyuan"
+                },
+                new Menus.Menu
+                {
+                    DisplayName = "题目",
+                    Icon = "solution",
+                    Order = 8,
+                    IsVisible = true,
+                    Target = "_self",
+                    IsSystem = true,
+                    Url = "/yljzt"
                 }
             };
         }

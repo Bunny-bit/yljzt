@@ -99,9 +99,9 @@ export default function RouterConfig({ history }) {
 					<Route path="/appStartPage" component={AppStartPage} />
 					<Route path="/yljzt" component={Yljzt} />
 					<Route path="/xueyuan" component={Xueyuan} />
-					<Route path="/renyua" component={Renyua} />
+					<Route path="/renyuan" component={Renyua} />
 					<Route path="/bingtu" component={Bingtu} />
-					<Route path="/renyuan" component={Renyuan} />
+					{/* <Route path="/renyuan" component={Renyuan} /> */}
 					
 				</Route>
 			
