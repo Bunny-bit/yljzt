@@ -40,7 +40,7 @@ const Chart1 = createG2(chart => {
   chart.col('xueyuan', {
     alias: '学院'
   });
-  chart.intervalStack().position('renshu').color('xueyuan').label('xueyuan');
+  chart.intervalStack().position('zhanbi').color('xueyuan').label('xueyuan');
   chart.render();
 });
 
