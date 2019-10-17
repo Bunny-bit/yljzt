@@ -14,7 +14,7 @@ const Chart = createG2(chart => {
   chart.col('xingming', {
     alias: '姓名'
   });
-  chart.interval().position('xingming*timu').color('xingming');
+  chart.interval().position('xingming*timu').color('xingming').label('timu');
   chart.render();
 });
 
@@ -40,11 +40,7 @@ const Chart1 = createG2(chart => {
   chart.col('xueyuan', {
     alias: '学院'
   });
-  chart.intervalStack().position('renshu').color('xueyuan').label('xueyuan', {
-    formatter: function formatter(val, xueyuan) {
-      return xueyuan.point.xueyuan ;
-    }
-  });
+  chart.intervalStack().position('renshu').color('xueyuan').label('xueyuan');
   chart.render();
 });
 
@@ -58,7 +54,7 @@ const Chart2 = createG2(chart => {
   chart.col('timu', {
     alias: '题目'
   });
-  chart.interval().position('timu*renshu').color('timu');
+  chart.interval().position('timu*renshu').color('timu').label('renshu');
   chart.render();
 });
 
@@ -72,7 +68,7 @@ const Chart3 = createG2(chart => {
   chart.col('xuyuan', {
     alias: '学院'
   });
-  chart.interval().position('xuyuan*zhengquelv').color('xuyuan');
+  chart.interval().position('xuyuan*zhengquelv').color('xuyuan').label('zhengquelv');
   chart.render();
 });
 
@@ -94,7 +90,7 @@ class Datitu extends React.Component {
                 : null
             }
           </Col>
-          <Col xl={{ span: 12}} lg={24} style={{ background: '#fff'}}>
+          <Col xl={{ span: 12 }} lg={24} style={{ background: '#fff' }}>
             {
               canyuzhanbi && canyuzhanbi.length ? <Chart1
                 data={canyuzhanbi}
@@ -116,7 +112,7 @@ class Datitu extends React.Component {
                 : null
             }
           </Col>
-          <Col xl={12} lg={24} style={{ background: '#fff'}}>
+          <Col xl={12} lg={24} style={{ background: '#fff' }}>
             {zhengque && zhengque.length ? <Chart3
               data={zhengque}
               width={width}

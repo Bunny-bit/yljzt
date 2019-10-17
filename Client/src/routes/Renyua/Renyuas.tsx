@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'dva';
-import { Form, Icon, Input, Button, Checkbox, message, Row, Col } from 'antd';
+import { Form, Icon, Input, Button, Checkbox, notification, Row, Col } from 'antd';
 import { ListView } from 'antd-mobile';
 import { List, Radio, Flex, Picker } from 'antd-mobile';
 import 'antd-mobile/dist/antd-mobile.css';
@@ -9,30 +9,37 @@ const create = Form.create;
 const RadioItem = Radio.RadioItem;
 import styles from './Renyuas.css';
 
-function Renyuas({ dispatch, form, isLoading, timus, answers,xueyuan }) {
+function Renyuas({ dispatch, form, isLoading, timus, answers, xueyuan }) {
 
     const { getFieldDecorator } = form;
 
     function handleSubmit(e) {
 
         form.validateFields((err, values) => {
-            let data = {
-                "name": values.name,
-                "xueyua": values.xueyua.length?values.xueyua[0]:"",
-                "xuehao": values.xuehao,
-                "banji": values.banji
-            };
-            let result = [];
-            for (var i in timus) {
-                if (answers[timus[i].id]) {
-                    result.push({
-                        "timuId": timus[i].id,
-                        "xuanxiangId": answers[timus[i].id]
-                    })
-                }
-            }
-            data.answers = result;
             if (!err) {
+                let data = {
+                    "name": values.name,
+                    "xueyua": values.xueyua.length ? values.xueyua[0] : "",
+                    "xuehao": values.xuehao,
+                    "banji": values.banji
+                };
+                let result = [];
+                for (var i in timus) {
+                    if (answers[timus[i].id]) {
+                        result.push({
+                            "timuId": timus[i].id,
+                            "xuanxiangId": answers[timus[i].id]
+                        })
+                    }
+                }
+                data.answers = result;
+                if (!data.answers || !data.answers.length || data.answers.length != 10) {
+                    notification.error({
+                        message: '提交失败',
+                        description: '你还有没有作答的题目，请检查后再提交！'
+                    });
+                    return;
+                }
                 dispatch({
                     type: 'renyua/submit',
                     payload: data
@@ -72,7 +79,7 @@ function Renyuas({ dispatch, form, isLoading, timus, answers,xueyuan }) {
                                         });
                                         console.log(answers);
                                     }}>
-                                    <span style={{ width: "80%", display:"inline-block",whiteSpace:"normal" }}>{v.name + " " + v.neirong}</span>
+                                    <span style={{ width: "80%", display: "inline-block", whiteSpace: "normal" }}>{v.name + " " + v.neirong}</span>
                                 </RadioItem>
                             )
                         })}
@@ -87,14 +94,14 @@ function Renyuas({ dispatch, form, isLoading, timus, answers,xueyuan }) {
 
     const separator = (sectionID, rowID) => (
         <div
-        key={`${sectionID}-${rowID}`}
-        style={{
-          backgroundColor: '#7d1523',
-          height: 8,
-          borderTop: '1px solid #ECECED',
-          borderBottom: '1px solid #ECECED',
-        }}
-      />
+            key={`${sectionID}-${rowID}`}
+            style={{
+                backgroundColor: '#7d1523',
+                height: 8,
+                borderTop: '1px solid #ECECED',
+                borderBottom: '1px solid #ECECED',
+            }}
+        />
     );
 
     return (
@@ -151,9 +158,9 @@ function Renyuas({ dispatch, form, isLoading, timus, answers,xueyuan }) {
                                         <Picker
                                             data={xueyuan}
                                             title="选择二级学院或教学部门"
-                                            // value={this.state.sValue}
-                                            // onChange={v => this.setState({ sValue: v })}
-                                            // onOk={v => this.setState({ sValue: v })}
+                                        // value={this.state.sValue}
+                                        // onChange={v => this.setState({ sValue: v })}
+                                        // onOk={v => this.setState({ sValue: v })}
                                         >
                                             <List.Item arrow="horizontal">请选择</List.Item>
                                         </Picker>

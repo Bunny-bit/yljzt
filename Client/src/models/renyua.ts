@@ -73,10 +73,6 @@ export default {
 			);
 			if (data.success) {
 				yield put(routerRedux.push('/tankuang'));
-				// notification.success({
-				// 	message: '保存成功',
-				// 	description: '恭喜你保存成功'
-				// });
 			}
 		},
 		*getTimus({ payload }, { call, put }) {

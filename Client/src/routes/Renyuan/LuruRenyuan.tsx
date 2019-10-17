@@ -81,7 +81,7 @@ const formCol = {
 )};
 LuruRenyuan = connect((state: { renyuan: any; }) => {
 	return {
-        ...state.renyuan;
+        ...state.renyuan
 	};
 })(LuruRenyuan);
 
